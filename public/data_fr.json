@@ -1,0 +1,12 @@
+{
+  "about": {
+    "name": "Rémy Mondi",
+    "job": "Développeur React",
+    "introduction": [
+      "Hello, je suis Rémy, développeur front-end React, Next.js et Typescript.",
+      "Je peux réaliser des sites internet, qu'il s'agisse de sites vitrines ou de landing pages. Je suis également en mesure de concevoir des applications web interactives et performantes à l’aide de React et Next.js.",
+      "Enfin, je peux réaliser de l'intégration web à partir de maquettes Figma,  pour garantir une correspondance parfaite entre le design et le site  final."
+    ],
+    "image": "/images/about_rmondi.jpg"
+  }
+}

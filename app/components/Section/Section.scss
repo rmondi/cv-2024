@@ -1,0 +1,47 @@
+@use "../../styles/Colors";
+@use "../../styles/Layout";
+@use "../../styles/Viewport" as v;
+
+.Section {
+  max-width: 100vw;
+  overflow-x: hidden;
+  margin: 20px 0;
+
+  @include v.viewport-sm {
+    margin: 60px 0;
+  }
+
+  @include v.viewport-md {
+    margin: 80px 0;
+  }
+
+  @include v.viewport-lg {
+    margin: 100px 0;
+  }
+
+  &--noMarginTop {
+    margin-top: 0;
+  }
+
+  &--noMarginBottom {
+    margin-bottom: 0;
+  }
+  
+  &__Wrapper {
+    padding: 0 20px;
+  
+    @include v.viewport-sm {
+      padding: 0 60px;
+    }
+
+    @include v.viewport-md {
+      padding: 0;
+      margin: 0 auto;
+      width: var( --container-max-md-width );
+    }
+
+    @include v.viewport-lg {
+      width: var( --container-max-lg-width );
+    }
+  }
+}

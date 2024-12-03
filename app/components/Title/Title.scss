@@ -1,0 +1,41 @@
+@use "../../styles/Colors";
+@use "../../styles/Viewport" as v;
+
+.Title {
+  padding: 0;
+  margin: 0;
+  font-family: var( --title );
+  line-height: 1.375em;
+  
+  span {
+    display: block;
+  }
+}
+
+h1.Title {
+  font-size: 30px;
+
+  @include v.viewport-sm {
+    font-size: 48px;
+  }
+
+  @include v.viewport-md {
+    font-size: 56px;
+  }
+
+  @include v.viewport-lg {
+    font-size: 64px;
+  }
+}
+
+h2.Title {
+  font-size: 26px;
+
+  @include v.viewport-sm {
+    font-size: 32px;
+  }
+
+  @include v.viewport-lg {
+    font-size: 40px;
+  }
+}
