@@ -1,0 +1,60 @@
+@use "../../styles/Colors";
+@use "../../styles/Viewport" as v;
+
+.LanguageSwitcher {
+  height: 100%;
+
+  &__List {
+    display: flex;
+    align-items: center;
+    
+    @include v.viewport-md {
+      height: 100%;
+    }
+  }
+
+  &__Item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    height: 30px;
+    line-height: 1em;
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: color ease-in-out .3s;
+
+    @include v.viewport-md {
+      cursor: pointer;
+    }
+
+    &:hover {
+      color: var( --orange );
+    }
+    
+    &::after {
+      content: "";
+      position: absolute;
+      top: 30%;
+      right: 0;
+      bottom: 30%;
+      width: 1px;
+      background-color: var( --blue );
+    }
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+
+      &::after { display: none; }
+    }
+
+    &--active {
+      font-weight: 700;
+      color: var( --orange );
+    }
+  }
+}

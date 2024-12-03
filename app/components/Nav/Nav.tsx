@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import ToggleNav from "../ToggleNav/ToggleNav";
+import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher";
 
 import "./Nav.scss";
 
@@ -72,6 +73,9 @@ const Nav = () => {
               </li>
             </ul>
           </nav>
+          <div className="Nav__Language-switcher">
+            <LanguageSwitcher toggleMenu={ handleToggle } />
+          </div>
         </div>
       </div>
     </header>
