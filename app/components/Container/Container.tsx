@@ -1,3 +1,5 @@
+import Nav from "../Nav/Nav";
+
 import "./Container.scss";
 
 type ContainerType = {
@@ -8,7 +10,7 @@ const Container = ( { children } : ContainerType ) => {
   
   return (
     <div className="MainLayout">
-      { /** Nav */ }
+      <Nav />
       <main className="Main">
         { children }
       </main>
