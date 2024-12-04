@@ -12,7 +12,7 @@ type LangContextType = {
 
 const langContextValues : LangContextType = {
   lang: "fr",
-  updateLang: ( lang: string ) => {}
+  updateLang: () => {}
 };
 
 export const LangContext = createContext( langContextValues );
