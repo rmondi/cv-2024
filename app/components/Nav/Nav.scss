@@ -1,6 +1,6 @@
 @use "../../styles/Colors";
 @use "../../styles/Layout";
-@use "../../styles/Viewport" as v;
+@use "../../styles/mixins/Viewport" as v;
 
 .Nav {
   position: fixed;

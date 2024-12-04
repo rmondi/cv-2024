@@ -1,7 +1,7 @@
 @use "Reset";
 @use "Colors";
 @use "Fonts";
-@use "Viewport" as v;
+@use "./mixins/Viewport" as v;
 
 @at-root body {
   content: "xs";
