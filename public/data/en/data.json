@@ -3,10 +3,182 @@
     "name": "Rémy Mondi",
     "job": "React developer",
     "introduction": [
-      "Hi there! I'm Rémy, React front-end developer, Next.js et Typescript.",
-      "Je peux réaliser des sites internet, qu'il s'agisse de sites vitrines ou de landing pages. Je suis également en mesure de concevoir des applications web interactives et performantes à l’aide de React et Next.js.",
-      "Enfin, je peux réaliser de l'intégration web à partir de maquettes Figma,  pour garantir une correspondance parfaite entre le design et le site  final."
+      "Hi there! I am Rémy, a front-end developer specializing in React, Next.js, and Typescript.",
+      "I can create websites, whether they are landing pages or showcase sites. I am also able to design interactive and high-performance web applications using React and Next.js.",
+      "Finally, I can perform web integration from Figma mockups to ensure a perfect match between the design and the final website."
     ],
     "image": "/images/about_rmondi.jpg"
-  }
+  },
+  "skills": {
+    "details": [
+      {
+        "title": "React.js",
+        "icon": "/images/logos/react-js.svg"
+      },
+      {
+        "title": "Next.js",
+        "icon": "/images/logos/next-js.svg"
+      },
+      {
+        "title": "JS ES6+",
+        "icon": "/images/logos/javascript.svg"
+      },
+      {
+        "title": "Typescript",
+        "icon": "/images/logos/typescript.svg"
+      },
+      {
+        "title": "Vite.js",
+        "icon": "/images/logos/vite-js.svg"
+      },
+      {
+        "title": "Figma",
+        "icon": "/images/logos/figma.svg"
+      },
+      {
+        "title": "Sass",
+        "icon": "/images/logos/sass.svg"
+      }
+    ],
+    "description": [
+      "My passion for front-end development led me towards JavaScript and its various libraries or frameworks such as React.js, Next.js, and Typescript.",
+      "On the back-end side, I mainly use CMS platforms like WordPress or Strapi, and online databases like Supabase.",
+      "I have recently started studying Symfony to be able to set up an API."
+    ]
+  },
+  "portfolio": [
+    {
+      "image": "/image/portfolio/solarscreen-desktop_720x450.jpg",
+      "title": "Solar Screen",
+      "url": "https://solarscreen.eu/fr/",
+      "tags": [ "Vue.js", "Nuxt.js", "JavaScript", "Typescript", "Strapi", "Tailwind CSS" ]
+    },
+    {
+      "image": "/image/portfolio/coverstyl-desktop_720x450.jpg",
+      "title": "CoverStyl",
+      "url": "https://coverstyl.com/fr/",
+      "tags": [ "React.js", "Next.js", "JavaScript", "Typescript", "Strapi", "Tailwind CSS" ]
+    },
+    {
+      "image": "/image/portfolio/memento-desktop_720x450.jpg",
+      "title": "Memento",
+      "url": "https://www.tageblatt.lu/memento/",
+      "tags": [ "React.js", "JavaScript", "Wordpress", "Sass" ]
+    }
+  ],
+  "career": [
+    {
+      "image": "/image/career/solar-screen.svg",
+      "title": "Solar Screen International",
+      "start_date": "Février 2024",
+      "end_date": "Mars 2024",
+      "city": "Foetz",
+      "country": "Luxembourg",
+      "type": "Freelance mission",
+      "description": "As part of strengthening the development team, I contributed to Solar Screen (Luxembourg) with the following tasks:",
+      "tasks": [
+        "Maintenance of the website solarscreen.eu",
+        "Maintenance of the website coverstyl.com"
+      ],
+      "tags": [ "JavaScript", "React.js", "Next.js", "Vue.js", "Nuxt.js", "JavaScript", "Typescript", "Tailwind CSS", "Strapi" ]
+    },
+    {
+      "image": "/image/career/vanksen.svg",
+      "title": "Vanksen",
+      "start_date": "Octobre 2023",
+      "end_date": "Novembre 2023",
+      "city": "Bertrange",
+      "country": "Luxembourg",
+      "type": "Freelance mission",
+      "description": "Development of a showcase website for Total Énergie (back-end / front-end) using the WordPress CMS:",
+      "tasks": [
+        "Installation / configuration of the CMS",
+        "Development of back-office functionalities",
+        "Theme integration from a Figma mockup"
+      ],
+      "tags": [ "JavaScript", "Typescript", "Sass", "Vite.js", "PHP", "Wordpress" ]
+    },
+    {
+      "image": "/image/career/editpress.svg",
+      "title": "Groupe Editpress",
+      "start_date": "Septembre 2021",
+      "end_date": "Avril 2023",
+      "city": "Esch-sur-Alzette",
+      "country": "Luxembourg",
+      "type": "Permanent contract",
+      "description": "Employed as a front-end developer, I had the opportunity to work on the various websites of the group:",
+      "tasks": [
+        "Development of the Memento application with React.js",
+        "Theme integration from Adobe XD mockups",
+        "Development of websites using WordPress",
+        "Development of WordPress plugins and themes",
+        "Maintenance of various websites"
+      ],
+      "tags": [ "React.js", "JavaScript", "Sass", "PHP", "Wordpress", "Webpack" ]
+    },
+    {
+      "image": "/image/career/h2a.svg",
+      "title": "h2a",
+      "start_date": "Novembre 2020",
+      "end_date": "Septembre 2021",
+      "city": "Pfaffenthal",
+      "country": "Luxembourg",
+      "type": "Permanent contract",
+      "description": "As a WordPress developer at the h2a agency, I primarily worked on various projects using this CMS:",
+      "tasks": [
+        "Theme integration from Adobe XD mockups",
+        "Development of websites using WordPress",
+        "Development of WordPress plugins and themes",
+        "Maintenance of various websites"
+      ],
+      "tags": [ "JavaScript", "Sass", "PHP", "Wordpress", "Webpack" ]
+    },
+    {
+      "image": "/image/career/huxley.svg",
+      "title": "Huxley",
+      "start_date": "Avril 2020",
+      "end_date": "Novembre 2020",
+      "city": "Luxembourg",
+      "country": "Luxembourg",
+      "type": "Consultancy mission",
+      "description": "Drupal 8 consultancy mission at PwC Luxembourg:",
+      "tasks": [
+        "Development of an internal monitoring tool for PwC (Drupal 8 + React)",
+        "Development of a Data Mapper on the European Commission website (Drupal 7 + JavaScript)"
+      ],
+      "tags": [ "React.js", "JavaScript", "Sass", "PHP", "Drupal 8", "Drupal 7", "Webpack" ]
+    },
+    {
+      "image": "/image/career/vanksen.svg",
+      "title": "Vanksen",
+      "start_date": "Septembre 2018",
+      "end_date": "Décembre 2019",
+      "city": "Bertrange",
+      "country": "Luxembourg",
+      "type": "Permanent contract",
+      "description": "As a front-end developer at the Vanksen agency, I primarily worked on various projects using Drupal 8 and WordPress:",
+      "tasks": [
+        "Theme integration from Adobe Photoshop & Sketch mockups",
+        "Development of Drupal 8 themes",
+        "Development of WordPress plugins and themes"
+      ],
+      "tags": [ "JavaScript", "Sass", "Flexbox", "PHP", "Drupal 8", "Wordpress", "Gulp.js" ]
+    },
+    {
+      "image": "/image/career/imaugis.png",
+      "title": "iMaugis",
+      "start_date": "Janvier 2011",
+      "end_date": "Mars 2018",
+      "city": "Charleville-Mézières",
+      "country": "France",
+      "type": "Permanent contract",
+      "description": "",
+      "tasks": [
+        "Theme integration from Photoshop mockups",
+        "Development of websites using WordPress",
+        "Development of WordPress plugins and themes"
+      ],
+      "tags": [ "JavaScript", "Sass", "Flexbox", "PHP", "Drupal 8", "Wordpress", "Gulp.js" ]
+    }
+  ]
 }
