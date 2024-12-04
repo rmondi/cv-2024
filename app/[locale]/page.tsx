@@ -1,11 +1,11 @@
 "use client";
 
-import { AboutType, AboutDefault } from "./utils/Types";
-import { useContext, useEffect, useState } from "react";
-import { LangContext } from "./utils/context/Lang";
-import Loader from "./components/Loader/Loader";
-import Section from "./components/Section/Section";
-import About from "./components/About/About";
+import { AboutType, AboutDefault } from "../utils/Types";
+import { useEffect, useState } from "react";
+import { useCurrentLocale } from "@/locales/client";
+import Loader from "../components/Loader/Loader";
+import Section from "../components/Section/Section";
+import About from "../components/About/About";
 
 type dataType = {
   about: AboutType;
@@ -17,13 +17,13 @@ const dataValues = {
 
 const Home = () => {
 
+  const currentLocale = useCurrentLocale();
+
   const [ isLoading, setIsloading ] = useState( true );
   const [ data, setData ] = useState<dataType>( dataValues );
 
-  const { lang } = useContext( LangContext );
-
   useEffect( () => {
-    fetch( `/data_${ lang }.json` )
+    fetch( `/data/${ currentLocale }/data.json` )
     .then( response => response.json() )
     .then( response => {
       setData( response );
@@ -31,7 +31,7 @@ const Home = () => {
     } )
     .catch( error => console.error( error ) );
 
-  }, [ lang ] );
+  }, [ currentLocale ] );
 
   if ( isLoading ) return <Loader />
   else return (
