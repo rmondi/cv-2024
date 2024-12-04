@@ -1,5 +1,6 @@
-import { useContext } from "react";
-import { LangContext } from "@/app/utils/context/Lang";
+"use client";
+
+import { useCurrentLocale, useChangeLocale } from "@/locales/client";
 import { v4 as uuidv4 } from "uuid";
 
 import "./LanguageSwitcher.scss";
@@ -10,12 +11,12 @@ type LanguageSwitcherType = {
 
 const LanguageSwitcher = ( { toggleMenu }: LanguageSwitcherType ) => {
 
-  const { lang, updateLang } = useContext( LangContext );
+  const locales = [ "fr", "en" ];
+  const currentLocale = useCurrentLocale();
+  const changeLocale = useChangeLocale();
 
-  const availableLangs = [ "fr", "en" ];
-
-  const handleClick = ( lang: string ) => {
-    updateLang( lang );
+  const handleClick = ( locale: string ) => {
+    changeLocale( locale as "fr" | "en" );
     toggleMenu();
   }
   
@@ -23,13 +24,13 @@ const LanguageSwitcher = ( { toggleMenu }: LanguageSwitcherType ) => {
     <div className="LanguageSwitcher">
       <ul className="LanguageSwitcher__List">
         {
-          availableLangs.map( availableLang => (
+          locales.map( locale => (
             <li
               key={ uuidv4() }
-              className={ `LanguageSwitcher__Item ${ lang === availableLang ? " LanguageSwitcher__Item--active" : "" }` }
-              onClick={ () => { handleClick( availableLang ) } }
+              className={ `LanguageSwitcher__Item ${ locale === currentLocale ? " LanguageSwitcher__Item--active" : "" }` }
+              onClick={ () => { handleClick( locale ) } }
             >
-              { availableLang }
+              { locale }
             </li>
           ) )
         }

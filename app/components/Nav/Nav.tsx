@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useScopedI18n } from "@/locales/client";
 import Link from "next/link";
 import ToggleNav from "../ToggleNav/ToggleNav";
 import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher";
@@ -8,6 +9,8 @@ import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher";
 import "./Nav.scss";
 
 const Nav = () => {
+
+  const t = useScopedI18n( "nav" );
 
   const [ active, setActive ] = useState( false );
 
@@ -35,7 +38,7 @@ const Nav = () => {
                   className="Nav__Link"
                   href="/"
                 >
-                  <span>Accueil</span>
+                  <span>{ t( "home" ) }</span>
                 </Link>
               </li>
               <li
@@ -46,7 +49,7 @@ const Nav = () => {
                   className="Nav__Link"
                   href="/skills"
                 >
-                  <span>Compétences</span>
+                  <span>{ t( "skills" ) }</span>
                 </Link>
               </li>
               <li
@@ -57,7 +60,7 @@ const Nav = () => {
                   className="Nav__Link"
                   href="/references"
                 >
-                  <span>Références</span>
+                  <span>{ t( "portfolio" ) }</span>
                 </Link>
               </li>
               <li
@@ -68,7 +71,7 @@ const Nav = () => {
                   className="Nav__Link"
                   href="/experiences"
                 >
-                  <span>Parcours</span>
+                  <span>{ t( "career" ) }</span>
                 </Link>
               </li>
             </ul>
