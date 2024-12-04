@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { LangProvider } from "./utils/Lang";
+import { LangProvider } from "./utils/context/Lang";
 import Container from "./components/Container/Container";
 
 import "./styles/Globals.scss";

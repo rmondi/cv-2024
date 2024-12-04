@@ -2,7 +2,7 @@
 
 import { AboutType, AboutDefault } from "./utils/Types";
 import { useContext, useEffect, useState } from "react";
-import { LangContext } from "./utils/Lang";
+import { LangContext } from "./utils/context/Lang";
 import Loader from "./components/Loader/Loader";
 import Section from "./components/Section/Section";
 import About from "./components/About/About";

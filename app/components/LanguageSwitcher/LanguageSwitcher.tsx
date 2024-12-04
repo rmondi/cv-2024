@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { LangContext } from "@/app/utils/Lang";
+import { LangContext } from "@/app/utils/context/Lang";
 import { v4 as uuidv4 } from "uuid";
 
 import "./LanguageSwitcher.scss";
