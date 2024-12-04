@@ -8,5 +8,177 @@
       "Enfin, je peux réaliser de l'intégration web à partir de maquettes Figma,  pour garantir une correspondance parfaite entre le design et le site  final."
     ],
     "image": "/images/about_rmondi.jpg"
-  }
+  },
+  "skills": {
+    "details": [
+      {
+        "title": "React.js",
+        "icon": "/images/logos/react-js.svg"
+      },
+      {
+        "title": "Next.js",
+        "icon": "/images/logos/next-js.svg"
+      },
+      {
+        "title": "JS ES6+",
+        "icon": "/images/logos/javascript.svg"
+      },
+      {
+        "title": "Typescript",
+        "icon": "/images/logos/typescript.svg"
+      },
+      {
+        "title": "Vite.js",
+        "icon": "/images/logos/vite-js.svg"
+      },
+      {
+        "title": "Figma",
+        "icon": "/images/logos/figma.svg"
+      },
+      {
+        "title": "Sass",
+        "icon": "/images/logos/sass.svg"
+      }
+    ],
+    "description": [
+      "Mon appétence pour le développement front-end m’a conduit vers le Javascript et ses différentes librairies ou frameworks tels que  React.js, Next.js ou encore Typescript.",
+      "Côté back-end, j’utilise essentiellement des CMS comme Wordpress ou Strapi, des bases de données en ligne comme Supabase.",
+      "J’étudie depuis peu Symfony afin de pouvoir mettre en place une API."
+    ]
+  },
+  "portfolio": [
+    {
+      "image": "/image/portfolio/solarscreen-desktop_720x450.jpg",
+      "title": "Solar Screen",
+      "url": "https://solarscreen.eu/fr/",
+      "tags": [ "Vue.js", "Nuxt.js", "JavaScript", "Typescript", "Strapi", "Tailwind CSS" ]
+    },
+    {
+      "image": "/image/portfolio/coverstyl-desktop_720x450.jpg",
+      "title": "CoverStyl",
+      "url": "https://coverstyl.com/fr/",
+      "tags": [ "React.js", "Next.js", "JavaScript", "Typescript", "Strapi", "Tailwind CSS" ]
+    },
+    {
+      "image": "/image/portfolio/memento-desktop_720x450.jpg",
+      "title": "Memento",
+      "url": "https://www.tageblatt.lu/memento/",
+      "tags": [ "React.js", "JavaScript", "Wordpress", "Sass" ]
+    }
+  ],
+  "career": [
+    {
+      "image": "/image/career/solar-screen.svg",
+      "title": "Solar Screen International",
+      "start_date": "Février 2024",
+      "end_date": "Mars 2024",
+      "city": "Foetz",
+      "country": "Luxembourg",
+      "type": "Mission Freelance",
+      "description": "Dans le cadre d'un renfort de l'équipe dev, je suis intervenu pour la société Solar Screen (Luxembourg) sur les tâches suivantes :",
+      "tasks": [
+        "Maintenance du site solarscreen.eu",
+        "Maintenance du site coverstyl.com"
+      ],
+      "tags": [ "JavaScript", "React.js", "Next.js", "Vue.js", "Nuxt.js", "JavaScript", "Typescript", "Tailwind CSS", "Strapi" ]
+    },
+    {
+      "image": "/image/career/vanksen.svg",
+      "title": "Vanksen",
+      "start_date": "Octobre 2023",
+      "end_date": "Novembre 2023",
+      "city": "Bertrange",
+      "country": "Luxembourg",
+      "type": "Mission Freelance",
+      "description": "Développement d'un site vitrine pour Total Énergie (back / front) avec le CMS Wordpress :",
+      "tasks": [
+        "Installation / configuration du CMS",
+        "Développement des fonctionnalités back-office",
+        "Intégration du thème depuis une maquette Figma"
+      ],
+      "tags": [ "JavaScript", "Typescript", "Sass", "Vite.js", "PHP", "Wordpress" ]
+    },
+    {
+      "image": "/image/career/editpress.svg",
+      "title": "Groupe Editpress",
+      "start_date": "Septembre 2021",
+      "end_date": "Avril 2023",
+      "city": "Esch-sur-Alzette",
+      "country": "Luxembourg",
+      "type": "CDI",
+      "description": "Salarié en tant que développeur front-end, j’ai pu travailler sur les différents sites du groupe :",
+      "tasks": [
+        "Développement de l’application Memento avec React.js",
+        "Intégration de thèmes depuis maquettes Adobe XD",
+        "Développement de sites sous Wordpress",
+        "Développement d'extensions, thèmes Wordpress",
+        "Maintenance de sites divers"
+      ],
+      "tags": [ "React.js", "JavaScript", "Sass", "PHP", "Wordpress", "Webpack" ]
+    },
+    {
+      "image": "/image/career/h2a.svg",
+      "title": "h2a",
+      "start_date": "Novembre 2020",
+      "end_date": "Septembre 2021",
+      "city": "Pfaffenthal",
+      "country": "Luxembourg",
+      "type": "CDI",
+      "description": "En tant que développeur Wordpress au sein de l’agence h2a, j’ai essentiellement travaillé sur divers projets autour de ce CMS :",
+      "tasks": [
+        "Intégration de thèmes depuis maquettes Adobe XD",
+        "Développement de sites sous Wordpress",
+        "Développement d'extensions, thèmes Wordpress",
+        "Maintenance de sites divers"
+      ],
+      "tags": [ "JavaScript", "Sass", "PHP", "Wordpress", "Webpack" ]
+    },
+    {
+      "image": "/image/career/huxley.svg",
+      "title": "Huxley",
+      "start_date": "Avril 2020",
+      "end_date": "Novembre 2020",
+      "city": "Luxembourg",
+      "country": "Luxembourg",
+      "type": "Mission de consultance",
+      "description": "Mission de consultance Drupal 8 au sein de PWC Luxembourg :",
+      "tasks": [
+        "Développement d'un outil de veille interne à PwC (Druapl 8 + React)",
+        "Développement d'un Data Mapper sur le site de la Commission Européenne (Drupal 7 + Javascript)"
+      ],
+      "tags": [ "React.js", "JavaScript", "Sass", "PHP", "Drupal 8", "Drupal 7", "Webpack" ]
+    },
+    {
+      "image": "/image/career/vanksen.svg",
+      "title": "Vanksen",
+      "start_date": "Septembre 2018",
+      "end_date": "Décembre 2019",
+      "city": "Bertrange",
+      "country": "Luxembourg",
+      "type": "CDI",
+      "description": "En tant que développeur front-end au sein de l’agence Vanksen, j’ai essentiellement travaillé sur divers projets autour de Drupal 8 et Wordpress :",
+      "tasks": [
+        "Intégration de thèmes depuis maquettes Adobe Photoshop & Sketch",
+        "Développement de thèmes Drupal 8",
+        "Développement d’extensions, thèmes Wordpress"
+      ],
+      "tags": [ "JavaScript", "Sass", "Flexbox", "PHP", "Drupal 8", "Wordpress", "Gulp.js" ]
+    },
+    {
+      "image": "/image/career/imaugis.png",
+      "title": "iMaugis",
+      "start_date": "Janvier 2011",
+      "end_date": "Mars 2018",
+      "city": "Charleville-Mézières",
+      "country": "France",
+      "type": "CDI",
+      "description": "",
+      "tasks": [
+        "Intégration de thèmes depuis maquettes Photoshop",
+        "Développement de sites sous Wordpress",
+        "Développement d'extensions, thèmes Wordpress"
+      ],
+      "tags": [ "JavaScript", "Sass", "Flexbox", "PHP", "Drupal 8", "Wordpress", "Gulp.js" ]
+    }
+  ]
 }
