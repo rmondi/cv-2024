@@ -1,0 +1,55 @@
+@use "../../styles/Colors";
+@use "../../styles/mixins/Viewport" as v;
+
+.Skill {
+
+  &__Link {
+    position: relative;
+    display: block;
+    padding-top: 100%;
+    height: 0;
+
+    &:hover {
+
+      .Skill__Body {
+        background-color: var( --white-d5 );
+      }
+    }
+  }
+  
+  &__Body {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: var( --white );
+    box-shadow: 1px 3px 5px rgba( var( --black-rgb ), .1 );
+
+    transition:  background-color ease-in-out .6s;
+  }
+
+  &__Icon {
+    width: auto;
+    height: 30%;
+
+    @at-root .Skills__Item:first-child .Skill & {
+      height: 40%;
+    }
+  }
+
+  &__Name {
+    margin-top: 5px;
+    font-size: 11px;
+
+    @include v.viewport-md {
+      margin-top: 8px;
+      font-size: 16px;
+    }
+  }
+}

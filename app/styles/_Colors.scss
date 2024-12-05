@@ -2,6 +2,8 @@
   --black: #000;
   --black-rgb: 0, 0, 0;
   --white: #fff;
+  --white-rgb: 255, 255, 255;
+  --white-d5: #{ darken( #fff, 5% ) };
   --gray: #555555;
   --gray-medium: #CED6E0;
   --gray-light: #EAEAEA;
