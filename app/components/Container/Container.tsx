@@ -1,4 +1,5 @@
 import Nav from "../Nav/Nav";
+import Footer from "../Footer/Footer";
 
 import "./Container.scss";
 
@@ -14,7 +15,7 @@ const Container = ( { children } : ContainerType ) => {
       <main className="Main">
         { children }
       </main>
-      { /** Footer */ }
+      <Footer />
     </div>
   )
 }

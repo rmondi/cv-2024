@@ -11,3 +11,10 @@ export const AboutDefault: AboutType = {
   introduction: [],
   image: ""
 };
+
+export type ContactLinkType = {
+  label: string;
+  href: string;
+  value: string;
+  icon: string;
+};
