@@ -12,6 +12,30 @@ export const AboutDefault: AboutType = {
   image: ""
 };
 
+export type SkillType = {
+  title: string;
+  icon: string;
+};
+
+export const SkillDefault: SkillType = {
+  title: "",
+  icon: ""
+};
+
+export type SkillsType = {
+  details: SkillType[];
+  description: string[];
+};
+
+export const SkillsDefault: SkillsType = {
+  details: [],
+  description: []
+};
+
+export type DynamicObjectType = {
+  [ key: string ]: string;
+};
+
 export type ContactLinkType = {
   label: string;
   href: string;

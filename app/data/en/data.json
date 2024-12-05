@@ -16,24 +16,24 @@
         "icon": "/images/logos/react-js.svg"
       },
       {
-        "title": "Next.js",
-        "icon": "/images/logos/next-js.svg"
+        "title": "Typescript",
+        "icon": "/images/logos/typescript.svg"
       },
       {
         "title": "JS ES6+",
         "icon": "/images/logos/javascript.svg"
       },
       {
-        "title": "Typescript",
-        "icon": "/images/logos/typescript.svg"
-      },
-      {
-        "title": "Vite.js",
-        "icon": "/images/logos/vite-js.svg"
+        "title": "Next.js",
+        "icon": "/images/logos/next-js.svg"
       },
       {
         "title": "Figma",
         "icon": "/images/logos/figma.svg"
+      },
+      {
+        "title": "Vite.js",
+        "icon": "/images/logos/vite-js.svg"
       },
       {
         "title": "Sass",
