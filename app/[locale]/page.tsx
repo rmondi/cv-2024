@@ -1,47 +1,28 @@
-"use client";
+"use server";
 
-import { AboutType, AboutDefault } from "../utils/Types";
-import { useEffect, useState } from "react";
-import { useCurrentLocale } from "@/locales/client";
-import Loader from "../components/Loader/Loader";
+import { promises as fs } from "fs";
+import { getCurrentLocale } from "@/locales/server";
+
 import Section from "../components/Section/Section";
 import About from "../components/About/About";
 
-type dataType = {
-  about: AboutType;
-};
+const Home = async () => {
 
-const dataValues = {
-  about: AboutDefault,
-};
+  const currentLocale = await getCurrentLocale();
 
-const Home = () => {
+  const file = await fs.readFile( `${ process.cwd() }/app/data/${ currentLocale }/data.json`, "utf8" );
+  const data = JSON.parse( file );
 
-  const currentLocale = useCurrentLocale();
+  const { about } = data;
 
-  const [ isLoading, setIsloading ] = useState( true );
-  const [ data, setData ] = useState<dataType>( dataValues );
-
-  useEffect( () => {
-    fetch( `/data/${ currentLocale }/data.json` )
-    .then( response => response.json() )
-    .then( response => {
-      setData( response );
-      setIsloading( false );
-    } )
-    .catch( error => console.error( error ) );
-
-  }, [ currentLocale ] );
-
-  if ( isLoading ) return <Loader />
-  else return (
+  return (
     <>
       <Section id="about">
         <About
-          name={ data.about.name }
-          job={ data.about.job }
-          introduction={ data.about.introduction }
-          image={ data.about.image }
+          name={ about.name }
+          job={ about.job }
+          introduction={ about.introduction }
+          image={ about.image }
         />
       </Section>
     </>
