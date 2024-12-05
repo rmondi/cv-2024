@@ -1,11 +1,11 @@
 {
   "about": {
     "name": "Rémy Mondi",
-    "job": "Développeur React",
+    "job": "Front-end developer",
     "introduction": [
-      "Hello, je suis Rémy, développeur front-end React, Next.js et Typescript.",
-      "Je peux réaliser des sites internet, qu'il s'agisse de sites vitrines ou de landing pages. Je suis également en mesure de concevoir des applications web interactives et performantes à l’aide de React et Next.js.",
-      "Enfin, je peux réaliser de l'intégration web à partir de maquettes Figma,  pour garantir une correspondance parfaite entre le design et le site  final."
+      "Hi there! I am Rémy, a front-end developer specializing in React, Next.js, and Typescript.",
+      "I can create websites, whether they are landing pages or showcase sites. I am also able to design interactive and high-performance web applications using React and Next.js.",
+      "Finally, I can perform web integration from Figma mockups to ensure a perfect match between the design and the final website."
     ],
     "image": "/images/about_rmondi.jpg"
   },
@@ -41,9 +41,9 @@
       }
     ],
     "description": [
-      "Mon appétence pour le développement front-end m’a conduit vers le Javascript et ses différentes librairies ou frameworks tels que  React.js, Next.js ou encore Typescript.",
-      "Côté back-end, j’utilise essentiellement des CMS comme Wordpress ou Strapi, des bases de données en ligne comme Supabase.",
-      "J’étudie depuis peu Symfony afin de pouvoir mettre en place une API."
+      "My passion for front-end development led me towards JavaScript and its various libraries or frameworks such as React.js, Next.js, and Typescript.",
+      "On the back-end side, I mainly use CMS platforms like WordPress or Strapi, and online databases like Supabase.",
+      "I have recently started studying Symfony to be able to set up an API."
     ]
   },
   "portfolio": [
@@ -74,11 +74,11 @@
       "end_date": "Mars 2024",
       "city": "Foetz",
       "country": "Luxembourg",
-      "type": "Mission Freelance",
-      "description": "Dans le cadre d'un renfort de l'équipe dev, je suis intervenu pour la société Solar Screen (Luxembourg) sur les tâches suivantes :",
+      "type": "Freelance mission",
+      "description": "As part of strengthening the development team, I contributed to Solar Screen (Luxembourg) with the following tasks:",
       "tasks": [
-        "Maintenance du site solarscreen.eu",
-        "Maintenance du site coverstyl.com"
+        "Maintenance of the website solarscreen.eu",
+        "Maintenance of the website coverstyl.com"
       ],
       "tags": [ "JavaScript", "React.js", "Next.js", "Vue.js", "Nuxt.js", "JavaScript", "Typescript", "Tailwind CSS", "Strapi" ]
     },
@@ -89,12 +89,12 @@
       "end_date": "Novembre 2023",
       "city": "Bertrange",
       "country": "Luxembourg",
-      "type": "Mission Freelance",
-      "description": "Développement d'un site vitrine pour Total Énergie (back / front) avec le CMS Wordpress :",
+      "type": "Freelance mission",
+      "description": "Development of a showcase website for Total Énergie (back-end / front-end) using the WordPress CMS:",
       "tasks": [
-        "Installation / configuration du CMS",
-        "Développement des fonctionnalités back-office",
-        "Intégration du thème depuis une maquette Figma"
+        "Installation / configuration of the CMS",
+        "Development of back-office functionalities",
+        "Theme integration from a Figma mockup"
       ],
       "tags": [ "JavaScript", "Typescript", "Sass", "Vite.js", "PHP", "Wordpress" ]
     },
@@ -105,14 +105,14 @@
       "end_date": "Avril 2023",
       "city": "Esch-sur-Alzette",
       "country": "Luxembourg",
-      "type": "CDI",
-      "description": "Salarié en tant que développeur front-end, j’ai pu travailler sur les différents sites du groupe :",
+      "type": "Permanent contract",
+      "description": "Employed as a front-end developer, I had the opportunity to work on the various websites of the group:",
       "tasks": [
-        "Développement de l’application Memento avec React.js",
-        "Intégration de thèmes depuis maquettes Adobe XD",
-        "Développement de sites sous Wordpress",
-        "Développement d'extensions, thèmes Wordpress",
-        "Maintenance de sites divers"
+        "Development of the Memento application with React.js",
+        "Theme integration from Adobe XD mockups",
+        "Development of websites using WordPress",
+        "Development of WordPress plugins and themes",
+        "Maintenance of various websites"
       ],
       "tags": [ "React.js", "JavaScript", "Sass", "PHP", "Wordpress", "Webpack" ]
     },
@@ -123,13 +123,13 @@
       "end_date": "Septembre 2021",
       "city": "Pfaffenthal",
       "country": "Luxembourg",
-      "type": "CDI",
-      "description": "En tant que développeur Wordpress au sein de l’agence h2a, j’ai essentiellement travaillé sur divers projets autour de ce CMS :",
+      "type": "Permanent contract",
+      "description": "As a WordPress developer at the h2a agency, I primarily worked on various projects using this CMS:",
       "tasks": [
-        "Intégration de thèmes depuis maquettes Adobe XD",
-        "Développement de sites sous Wordpress",
-        "Développement d'extensions, thèmes Wordpress",
-        "Maintenance de sites divers"
+        "Theme integration from Adobe XD mockups",
+        "Development of websites using WordPress",
+        "Development of WordPress plugins and themes",
+        "Maintenance of various websites"
       ],
       "tags": [ "JavaScript", "Sass", "PHP", "Wordpress", "Webpack" ]
     },
@@ -140,11 +140,11 @@
       "end_date": "Novembre 2020",
       "city": "Luxembourg",
       "country": "Luxembourg",
-      "type": "Mission de consultance",
-      "description": "Mission de consultance Drupal 8 au sein de PWC Luxembourg :",
+      "type": "Consultancy mission",
+      "description": "Drupal 8 consultancy mission at PwC Luxembourg:",
       "tasks": [
-        "Développement d'un outil de veille interne à PwC (Druapl 8 + React)",
-        "Développement d'un Data Mapper sur le site de la Commission Européenne (Drupal 7 + Javascript)"
+        "Development of an internal monitoring tool for PwC (Drupal 8 + React)",
+        "Development of a Data Mapper on the European Commission website (Drupal 7 + JavaScript)"
       ],
       "tags": [ "React.js", "JavaScript", "Sass", "PHP", "Drupal 8", "Drupal 7", "Webpack" ]
     },
@@ -155,12 +155,12 @@
       "end_date": "Décembre 2019",
       "city": "Bertrange",
       "country": "Luxembourg",
-      "type": "CDI",
-      "description": "En tant que développeur front-end au sein de l’agence Vanksen, j’ai essentiellement travaillé sur divers projets autour de Drupal 8 et Wordpress :",
+      "type": "Permanent contract",
+      "description": "As a front-end developer at the Vanksen agency, I primarily worked on various projects using Drupal 8 and WordPress:",
       "tasks": [
-        "Intégration de thèmes depuis maquettes Adobe Photoshop & Sketch",
-        "Développement de thèmes Drupal 8",
-        "Développement d’extensions, thèmes Wordpress"
+        "Theme integration from Adobe Photoshop & Sketch mockups",
+        "Development of Drupal 8 themes",
+        "Development of WordPress plugins and themes"
       ],
       "tags": [ "JavaScript", "Sass", "Flexbox", "PHP", "Drupal 8", "Wordpress", "Gulp.js" ]
     },
@@ -171,12 +171,12 @@
       "end_date": "Mars 2018",
       "city": "Charleville-Mézières",
       "country": "France",
-      "type": "CDI",
+      "type": "Permanent contract",
       "description": "",
       "tasks": [
-        "Intégration de thèmes depuis maquettes Photoshop",
-        "Développement de sites sous Wordpress",
-        "Développement d'extensions, thèmes Wordpress"
+        "Theme integration from Photoshop mockups",
+        "Development of websites using WordPress",
+        "Development of WordPress plugins and themes"
       ],
       "tags": [ "JavaScript", "Sass", "Flexbox", "PHP", "Drupal 8", "Wordpress", "Gulp.js" ]
     }
