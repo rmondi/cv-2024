@@ -1,0 +1,23 @@
+{
+  "name": "Rémy Mondi",
+  "links": [
+    {
+      "label": "Téléphone",
+      "href": "tel:+33767343674",
+      "value": "+33 7 67 34 36 74",
+      "icon": "/images/icons/phone.svg"
+    },
+    {
+      "label": "E-mail",
+      "href": "mailto:remy@mondi.dev",
+      "value": "remy@mondi.dev",
+      "icon": "/images/icons/mail.svg"
+    },
+    {
+      "label": "Github",
+      "href": "https://github.com/rmondi",
+      "value": "https://github.com/rmondi",
+      "icon": "/images/icons/github.svg"
+    }
+  ]
+}
