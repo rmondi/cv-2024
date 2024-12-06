@@ -6,6 +6,7 @@ import { getCurrentLocale } from "@/locales/server";
 import Section from "../components/Section/Section";
 import About from "../components/About/About";
 import Skills from "../components/Skills/Skills";
+import Portfolio from "../components/Portfolio/Portfolio";
 
 const Home = async () => {
 
@@ -14,7 +15,7 @@ const Home = async () => {
   const file = await fs.readFile( `${ process.cwd() }/app/data/${ currentLocale }/data.json`, "utf8" );
   const data = JSON.parse( file );
 
-  const { about, skills } = data;
+  const { about, skills, portfolio } = data;
 
   return (
     <>
@@ -28,6 +29,9 @@ const Home = async () => {
       </Section>
       <Section id="skills">
         <Skills details={ skills.details } description={ skills.description } />
+      </Section>
+      <Section id="portfolio">
+        <Portfolio data={ portfolio } />
       </Section>
     </>
   );

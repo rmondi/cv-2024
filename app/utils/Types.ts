@@ -32,6 +32,17 @@ export const SkillsDefault: SkillsType = {
   description: []
 };
 
+export type ReferenceType = {
+  image: string;
+  title: string;
+  url: string;
+  tags: string[];
+};
+
+export type PortfolioType = {
+  data: ReferenceType[];
+};
+
 export type DynamicObjectType = {
   [ key: string ]: string;
 };
