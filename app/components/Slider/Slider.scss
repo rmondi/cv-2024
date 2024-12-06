@@ -1,0 +1,59 @@
+@use "../../styles/Colors";
+@use "../../styles/mixins/Viewport" as v;
+
+.Slider {
+
+  // .slidetrack {
+  //   overflow: visible;
+
+  //   @include v.viewport-md {
+  //     overflow: hidden;
+  //   }
+  // }
+
+  // .slide {
+  //   opacity: .7;
+  //   transition: opacity ease-in-out .3s;
+
+  //   &.is-visible {
+  //     opacity: 1;
+  //   }
+
+  //   @include v.viewport-md {
+  //     opacity: 1;
+  //   }
+  // }
+
+  &__Arrows {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    transform: translateY( -100% );
+    padding-right: 15px;
+
+    @include v.viewport-md {
+      padding-right: 0;
+    }
+  }
+
+  &__Arrow {
+    height: 30px;
+    width: 30px;
+    background-color: transparent;
+    border: 1.5px solid var( --orange );
+    border-radius: 50%;
+    transition: opacity ease-in-out .3s;
+    opacity: 1;
+    cursor: pointer;
+
+    &:hover {
+      opacity: .7;
+    }
+
+    svg {
+      stroke: var( --orange );
+      height: 20px;
+      width: 20px;
+    }
+  }
+}

@@ -1,0 +1,106 @@
+@use "sass:math";
+@use "../../styles/Colors";
+@use "../../styles/Fonts";
+@use "../../styles/mixins/Viewport" as v;
+
+.Reference {
+  height: 100%;
+  transition: opacity ease-in-out .3s;
+
+  &:hover {
+    opacity: .9;
+
+    .reference__image {
+      transform: scale(1.01);
+    }
+  }
+  
+  &__Link {
+    text-decoration: none;
+  }
+  
+  &__Container,
+  &__Header {
+    overflow: hidden;
+  }
+  
+  &__Container {
+    height: 100%;
+    border-radius: 5px;
+    background-color: var( --white );
+    box-shadow: 1px 1px 3px rgba( var( --black-rgb ), .15 );
+
+    @include v.viewport-md {
+      box-shadow: none;
+    }
+  }
+
+  &__Header {
+    position: relative;
+    padding-top: percentage( math.div( 216,345 ) );
+    height: 0;
+  }
+
+  &__Body {
+    padding: 16px 8px;
+    
+    @include v.viewport-sm {
+      padding: 16px;
+    }
+  }
+
+  &__Visual {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  &__Image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: transform ease-in-out .3s;
+  }
+
+  &__Title {
+    font-family: var( --title );
+    font-size: 20px;
+    line-height: 1.33em;
+    color: var( --blue );
+
+    @include v.viewport-lg {
+      font-size: 24px;
+    }
+  }
+
+  &__Url {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    font-size: 14px;
+    line-height: 1.16em;
+    color: var( --gray );
+
+    @include v.viewport-lg {
+      font-size: 16px;
+    }
+
+    svg {
+      margin-right: 5px;
+      stroke: var( --orange );
+      height: 14px;
+      width: 14px;
+    }
+  }
+
+  &__Year {
+    font-size: .8em;
+    margin-left: 3px;
+  }
+
+  &__Skills {
+    margin-top: 8px;
+  }
+}
