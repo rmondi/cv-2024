@@ -1,8 +1,9 @@
 "use client";
 
-import { Swiper, useSwiper } from "swiper/react";
+import { Swiper } from "swiper/react";
 import { Navigation } from "swiper/modules";
-import { ArrowRight, ArrowLeft } from "lucide-react";
+
+import SliderNav from "../SliderNav/SliderNav";
 
 import "swiper/scss";
 import "swiper/scss/navigation";
@@ -20,25 +21,9 @@ type SliderType = {
 };
 
 const Slider = ( { slidesPerView = 3, spaceBetween = 30, breakpoints = {}, children }: SliderType ) => {
-
-  const swiper = useSwiper();
   
   return (
     <div className="Slider">
-      <div className="Slider__Arrows">
-        <button
-          className="Slider__Arrow prev"
-          onClick={ () => swiper.slidePrev() }
-        >
-          <ArrowLeft strokeWidth={ 1.5 } />
-        </button>
-        <button
-          className="Slider__Arrow next"
-          onClick={ () => swiper.slideNext() }
-        >
-          <ArrowRight strokeWidth={ 1.5 } />
-        </button>
-      </div>
       <Swiper
         modules={ [ Navigation ] }
         slidesPerView={ slidesPerView }
@@ -51,7 +36,12 @@ const Slider = ( { slidesPerView = 3, spaceBetween = 30, breakpoints = {}, child
           }
         }
       >
-        { children }
+        <div className="Slider__Nav">
+          <SliderNav />
+        </div>
+        <div className="Slider__Slides">
+          { children }
+        </div>
       </Swiper>
     </div>
   )
