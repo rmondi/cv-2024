@@ -43,6 +43,24 @@ export type PortfolioType = {
   data: ReferenceType[];
 };
 
+export type ExperienceType = {
+  image: string;
+  url: string;
+  title: string;
+  start_date: string;
+  end_date: string;
+  city: string;
+  country: string;
+  type: string;
+  description: string;
+  tasks: string[];
+  tags: string[];
+};
+
+export type CareerType = {
+  data: ExperienceType[];
+};
+
 export type TagType = {
   label: string;
   linkable?: boolean;

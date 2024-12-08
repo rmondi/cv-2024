@@ -1,0 +1,30 @@
+@use "../../styles/Colors";
+@use "../../styles/mixins/Viewport" as v;
+
+.Task {
+  position: relative;
+  margin: 5px 0;
+  padding-right: 30px;
+  padding-left: 15px;
+
+  @include v.viewport-md {
+    padding-left: 20px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var( --orange );
+
+    @include v.viewport-md {
+      top: 5px;
+      height: 10px;
+      width: 10px;
+    }
+  }
+}

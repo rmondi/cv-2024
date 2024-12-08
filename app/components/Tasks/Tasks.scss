@@ -1,0 +1,9 @@
+@use "../../styles/mixins/Viewport" as v;
+
+.Tasks {
+  padding-left: 20px;
+
+  @include v.viewport-md {
+    padding-left: 30px;
+  }
+}

@@ -68,7 +68,8 @@
   ],
   "career": [
     {
-      "image": "/image/career/solar-screen.svg",
+      "image": "/images/career/solar-screen.svg",
+      "url": "https://solarscreen.eu/fr/",
       "title": "Solar Screen International",
       "start_date": "Février 2024",
       "end_date": "Mars 2024",
@@ -83,14 +84,15 @@
       "tags": [ "JavaScript", "React.js", "Next.js", "Vue.js", "Nuxt.js", "JavaScript", "Typescript", "Tailwind CSS", "Strapi" ]
     },
     {
-      "image": "/image/career/vanksen.svg",
+      "image": "/images/career/vanksen.svg",
+      "url": "https://www.vanksen.com/fr",
       "title": "Vanksen",
       "start_date": "Octobre 2023",
       "end_date": "Novembre 2023",
       "city": "Bertrange",
       "country": "Luxembourg",
       "type": "Mission Freelance",
-      "description": "Développement d'un site vitrine pour Total Énergie (back / front) avec le CMS Wordpress :",
+      "description": "Développement d'un site vitrine pour Total Énergie (back / front) avec le CMS Wordpress:",
       "tasks": [
         "Installation / configuration du CMS",
         "Développement des fonctionnalités back-office",
@@ -99,7 +101,8 @@
       "tags": [ "JavaScript", "Typescript", "Sass", "Vite.js", "PHP", "Wordpress" ]
     },
     {
-      "image": "/image/career/editpress.svg",
+      "image": "/images/career/editpress.svg",
+      "url": "https://www.editpress.lu/",
       "title": "Groupe Editpress",
       "start_date": "Septembre 2021",
       "end_date": "Avril 2023",
@@ -117,7 +120,8 @@
       "tags": [ "React.js", "JavaScript", "Sass", "PHP", "Wordpress", "Webpack" ]
     },
     {
-      "image": "/image/career/h2a.svg",
+      "image": "/images/career/h2a.svg",
+      "url": "https://www.h2a.lu/",
       "title": "h2a",
       "start_date": "Novembre 2020",
       "end_date": "Septembre 2021",
@@ -134,7 +138,8 @@
       "tags": [ "JavaScript", "Sass", "PHP", "Wordpress", "Webpack" ]
     },
     {
-      "image": "/image/career/huxley.svg",
+      "image": "/images/career/huxley.svg",
+      "url": "https://www.huxley.com/fr-fr/",
       "title": "Huxley",
       "start_date": "Avril 2020",
       "end_date": "Novembre 2020",
@@ -149,7 +154,8 @@
       "tags": [ "React.js", "JavaScript", "Sass", "PHP", "Drupal 8", "Drupal 7", "Webpack" ]
     },
     {
-      "image": "/image/career/vanksen.svg",
+      "image": "/images/career/vanksen.svg",
+      "url": "https://www.vanksen.com/fr",
       "title": "Vanksen",
       "start_date": "Septembre 2018",
       "end_date": "Décembre 2019",
@@ -165,7 +171,8 @@
       "tags": [ "JavaScript", "Sass", "Flexbox", "PHP", "Drupal 8", "Wordpress", "Gulp.js" ]
     },
     {
-      "image": "/image/career/imaugis.png",
+      "image": "/images/career/imaugis.png",
+      "url": "https://www.imaugis.com/",
       "title": "iMaugis",
       "start_date": "Janvier 2011",
       "end_date": "Mars 2018",

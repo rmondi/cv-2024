@@ -1,0 +1,21 @@
+@use "sass:math";
+@use "../../styles/mixins/Viewport" as v;
+
+.Career {
+
+  &__Header {
+
+    @include v.viewport-sm {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &__Body {
+    margin-top: 32px;
+
+    @include v.viewport-md {
+      margin-top: 52px;
+    }
+  }
+}
