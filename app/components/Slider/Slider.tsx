@@ -1,7 +1,7 @@
 "use client";
 
 import { Swiper } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 
 import SliderNav from "../SliderNav/SliderNav";
 
@@ -25,7 +25,15 @@ const Slider = ( { slidesPerView = 3, spaceBetween = 30, breakpoints = {}, child
   return (
     <div className="Slider">
       <Swiper
-        modules={ [ Navigation ] }
+        modules={ [ Autoplay, Navigation ] }
+        loop={ true }
+        autoplay={
+          {
+            delay: 3000,
+            disableOnInteraction: true,
+            pauseOnMouseEnter: true
+          }
+        }
         slidesPerView={ slidesPerView }
         spaceBetween={ spaceBetween }
         breakpoints={ breakpoints }
