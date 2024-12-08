@@ -1,0 +1,108 @@
+@use "sass:math";
+@use "../../styles/Fonts";
+@use "../../styles/Colors";
+@use "../../styles/mixins/Viewport" as v;
+
+.Experience {
+  position: relative;
+  
+  &__Link {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: block;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+    transition: opacity ease-in-out .3s;
+    cursor: pointer;
+
+    &:hover {
+      opacity: .7;
+    }
+  }
+
+  &__Container {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+
+    @include v.viewport-sm {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__Image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+
+    @include v.viewport-sm {
+      flex: 0 0 percentage(math.div(3,8));
+      height: auto;
+    }
+  }
+
+  &__Logo {
+    width: auto;
+    height: 50px;
+
+    @include v.viewport-sm {
+      width: 50%;
+      height: auto;
+    }
+  }
+
+  &__Content {
+    margin-top: 10px;
+
+    @include v.viewport-sm {
+      flex: 0 0 percentage(math.div(9,16));
+      margin-top: 0;
+      margin-right: percentage(math.div(1,16));
+    }
+  }
+
+  &__Name {
+    font-family: var( --title );
+    font-size: 20px;
+    line-height: 1.33em;
+    color: var( --blue );
+
+    @include v.viewport-md {
+      font-size: 24px;
+    }
+  }
+
+  &__Info {
+    margin-top: 5px;
+    font-size: 12px;
+
+    @include v.viewport-md {
+      margin-top: 8px;
+      font-size: 14px;
+    }
+
+    span {
+      font-weight: 700;
+    }
+  }
+
+  &__Description {
+    margin-top: 10px;
+
+    @include v.viewport-md {
+      margin-top: 16px;
+    }
+  }
+
+  &__Tags {
+    margin-top: 20px;
+
+    @include v.viewport-md {
+      margin-top: 30px;
+    }
+  }
+}

@@ -7,6 +7,7 @@ import Section from "../components/Section/Section";
 import About from "../components/About/About";
 import Skills from "../components/Skills/Skills";
 import Portfolio from "../components/Portfolio/Portfolio";
+import Career from "../components/Career/Career";
 
 const Home = async () => {
 
@@ -15,7 +16,7 @@ const Home = async () => {
   const file = await fs.readFile( `${ process.cwd() }/app/data/${ currentLocale }/data.json`, "utf8" );
   const data = JSON.parse( file );
 
-  const { about, skills, portfolio } = data;
+  const { about, skills, portfolio, career } = data;
 
   return (
     <>
@@ -32,6 +33,9 @@ const Home = async () => {
       </Section>
       <Section id="portfolio">
         <Portfolio data={ portfolio } />
+      </Section>
+      <Section id="career">
+        <Career data={ career } />
       </Section>
     </>
   );

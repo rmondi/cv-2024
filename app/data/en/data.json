@@ -50,13 +50,13 @@
     {
       "image": "/images/portfolio/solarscreen-desktop_720x450.jpg",
       "title": "Solar Screen",
-      "url": "https://solarscreen.eu/fr/",
+      "url": "https://solarscreen.eu/en/",
       "tags": [ "Vue.js", "Nuxt.js", "JavaScript", "Typescript", "Strapi", "Tailwind CSS" ]
     },
     {
       "image": "/images/portfolio/coverstyl-desktop_720x450.jpg",
       "title": "CoverStyl",
-      "url": "https://coverstyl.com/fr/",
+      "url": "https://coverstyl.com/en/",
       "tags": [ "React.js", "Next.js", "JavaScript", "Typescript", "Strapi", "Tailwind CSS" ]
     },
     {
@@ -69,6 +69,7 @@
   "career": [
     {
       "image": "/images/career/solar-screen.svg",
+      "url": "https://solarscreen.eu/en/",
       "title": "Solar Screen International",
       "start_date": "Février 2024",
       "end_date": "Mars 2024",
@@ -84,6 +85,7 @@
     },
     {
       "image": "/images/career/vanksen.svg",
+      "url": "https://www.vanksen.com/en",
       "title": "Vanksen",
       "start_date": "Octobre 2023",
       "end_date": "Novembre 2023",
@@ -100,6 +102,7 @@
     },
     {
       "image": "/images/career/editpress.svg",
+      "url": "https://www.editpress.lu/",
       "title": "Groupe Editpress",
       "start_date": "Septembre 2021",
       "end_date": "Avril 2023",
@@ -118,6 +121,7 @@
     },
     {
       "image": "/images/career/h2a.svg",
+      "url": "https://www.h2a.lu/",
       "title": "h2a",
       "start_date": "Novembre 2020",
       "end_date": "Septembre 2021",
@@ -135,6 +139,7 @@
     },
     {
       "image": "/images/career/huxley.svg",
+      "url": "https://www.huxley.com/en-US/",
       "title": "Huxley",
       "start_date": "Avril 2020",
       "end_date": "Novembre 2020",
@@ -150,6 +155,7 @@
     },
     {
       "image": "/images/career/vanksen.svg",
+      "url": "https://www.vanksen.com/en",
       "title": "Vanksen",
       "start_date": "Septembre 2018",
       "end_date": "Décembre 2019",
@@ -166,6 +172,7 @@
     },
     {
       "image": "/images/career/imaugis.png",
+      "url": "https://www.imaugis.com/",
       "title": "iMaugis",
       "start_date": "Janvier 2011",
       "end_date": "Mars 2018",
