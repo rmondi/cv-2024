@@ -43,6 +43,12 @@ export type PortfolioType = {
   data: ReferenceType[];
 };
 
+export type TagType = {
+  label: string;
+  linkable?: boolean;
+  slug?: string;
+};
+
 export type DynamicObjectType = {
   [ key: string ]: string;
 };

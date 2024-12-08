@@ -4,18 +4,18 @@
 @use "../../styles/mixins/Viewport" as v;
 
 .Reference {
+  position: relative;
   height: 100%;
   transition: opacity ease-in-out .3s;
 
   &:hover {
     opacity: .9;
-
-    .reference__image {
-      transform: scale(1.01);
-    }
   }
   
   &__Link {
+    position: absolute;
+    z-index: 2;
+    inset: 0;
     text-decoration: none;
   }
   
@@ -25,6 +25,8 @@
   }
   
   &__Container {
+    position: relative;
+    z-index: 1;
     height: 100%;
     border-radius: 5px;
     background-color: var( --white );
@@ -42,11 +44,7 @@
   }
 
   &__Body {
-    padding: 16px 8px;
-    
-    @include v.viewport-sm {
-      padding: 16px;
-    }
+    padding: 16px;
   }
 
   &__Visual {
@@ -62,6 +60,10 @@
     width: 100%;
     object-fit: cover;
     transition: transform ease-in-out .3s;
+
+    @at-root .Reference:hover & {
+      transform: scale(1.01);
+    }
   }
 
   &__Title {
@@ -78,7 +80,7 @@
   &__Url {
     display: flex;
     align-items: center;
-    margin-top: 5px;
+    margin-top: 10px;
     font-size: 14px;
     line-height: 1.16em;
     color: var( --gray );
@@ -95,12 +97,11 @@
     }
   }
 
-  &__Year {
-    font-size: .8em;
-    margin-left: 3px;
-  }
+  &__Tags {
+    margin-top: 16px;
 
-  &__Skills {
-    margin-top: 8px;
+    @include v.viewport-md {
+      margin-top: 20px;
+    }
   }
 }

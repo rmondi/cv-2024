@@ -1,5 +1,9 @@
 import Image from "next/image";
-import { Link } from "lucide-react";
+import { Link as LinkIcon } from "lucide-react";
+import Link from "next/link";
+import { v4 as uuidv4 } from "uuid";
+import Tags from "../Tags/Tags";
+import Tag from "../Tag/Tag";
 
 import { ReferenceType } from "@/app/utils/Types";
 
@@ -9,6 +13,11 @@ const Reference = ( { image, title, url, tags }: ReferenceType ) => {
   
   return (
     <div className="Reference">
+      <Link
+        className="Reference__Link"
+        href={ url }
+        target="_blank"
+      />
       <div className="Reference__Container">
         <div className="Reference__Header">
           <div className="Reference__Visual">
@@ -26,10 +35,19 @@ const Reference = ( { image, title, url, tags }: ReferenceType ) => {
             { title }
           </h2>
           <h3 className="Reference__Url">
-            <Link strokeWidth={ 1.5 } />{ url }
+            <LinkIcon strokeWidth={ 1.5 } />{ url }
           </h3>
-          <div className="Reference__Skills">
-
+          <div className="Reference__Tags">
+            <Tags>
+              {
+                tags.map( tag => (
+                  <Tag
+                    key={ uuidv4() }
+                    label={ tag }
+                  />
+                ) )
+              }
+            </Tags>
           </div>
         </div>
       </div>

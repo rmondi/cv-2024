@@ -1,0 +1,29 @@
+@use "../../styles/Colors";
+@use "../../styles/mixins/Viewport" as v;
+
+.Tag {
+  
+  &__Link,
+  &__Label {
+    display: block;
+    padding: 5px 8px;
+    border-radius: 5px;
+    border: 1px solid var( --orange );
+    font-family: var( --main-light );
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1em;
+    background-color: var( --orange );
+    color: var( --white );
+  }
+
+  &__Link {
+    text-decoration: none;
+    transition: all ease-in-out .3s;
+
+    &:hover {
+      background-color: var( --orange );
+      color: var( --white );
+    }
+  }
+}
