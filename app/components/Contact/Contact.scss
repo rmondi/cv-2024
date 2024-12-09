@@ -1,0 +1,68 @@
+@use "sass:math";
+@use "../../styles/Colors";
+@use "../../styles/mixins/Viewport" as v;
+
+.Contact {
+
+  &__Wrapper {
+    position: relative;
+    padding: 30px 0;
+
+    @include v.viewport-sm {
+      padding: 56px 0;
+    }
+
+    @include v.viewport-md {
+      padding: 72px 0;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 50%;
+      bottom: 0;
+      width: 100vw;
+      transform: translateX( -50% );
+      background-color: var( --blue-light );
+    }
+  }
+
+  &__Header {
+
+    @include v.viewport-md {
+      text-align: center;
+    }
+  }
+
+  &__Description,
+  &__Form {
+
+    @include v.viewport-md {
+      padding-right: percentage( math.div( 1, 12 ) );
+      padding-left: percentage( math.div( 1, 12 ) );
+    }
+
+    @include v.viewport-lg {
+      padding-right: percentage( math.div( 2, 12 ) );
+      padding-left: percentage( math.div( 2, 12 ) );
+    }
+  }
+
+  &__Description {
+    
+    @include v.viewport-md {
+      margin-top: 30px;
+      text-align: center;
+    }
+  }
+
+  &__Form {
+    margin-top: 30px;
+
+    @include v.viewport-md {
+      margin-top: 60px;
+    }
+  }
+}

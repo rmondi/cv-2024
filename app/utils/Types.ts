@@ -67,7 +67,60 @@ export type TagType = {
   slug?: string;
 };
 
+export type FormType = {
+  onSubmit: () => void;
+  children: React.ReactNode;
+};
+
+export type FormRowType = {
+  children: React.ReactNode;
+};
+
+export type FormColType = {
+  children: React.ReactNode;
+};
+
+export type FormElementType = {
+  children: React.ReactNode;
+};
+
+export type FormLabelType = {
+  id: string;
+  label: string;
+  required?: boolean;
+}
+
+export type FormInputType = {
+  id: string;
+  name: string;
+  label: string;
+  type?: string;
+  required?: boolean;
+  value: string | number | readonly string[] | undefined;
+  placeholder?: string;
+  error?: string | null;
+  onChange: ( e : React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement> ) => void;
+};
+
+export type FormSubmitType = {
+  value: string;
+};
+
+export type FormErrorType = {
+  message: string | null;
+};
+
 export type DynamicObjectType = {
+  [ key: string ]: string;
+};
+
+export type ContactFormType = {
+  fullname: string;
+  email: string;
+  message: string;
+};
+
+export type ValidateErrorsType = {
   [ key: string ]: string;
 };
 

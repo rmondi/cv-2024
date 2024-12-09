@@ -14,5 +14,6 @@
   --blue: #4F6D7A;
   --blue-light: #C0D6DF;
   --orange: #DD6E42;
+  --orange-l10: #{ lighten( #DD6E42, 10% ) };
   --green: #2ED573;
 }
