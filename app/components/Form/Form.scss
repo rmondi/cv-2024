@@ -1,0 +1,122 @@
+@use "../../styles/Colors";
+@use "../../styles/mixins/Viewport" as v;
+
+.Form {
+
+  --height: 40px;
+
+  &__Row {
+    
+    @include v.viewport-sm {
+      display: flex;
+      margin: 20px -10px;
+    }
+
+    @include v.viewport-lg {
+      margin: 30px -10px;
+    }
+  }
+
+  &__Col {
+
+    @include v.viewport-sm {
+      flex: 1 1 auto;
+      padding: 0 10px;
+    }
+  }
+
+  &__Element {
+    margin: 20px 0;
+
+    @include v.viewport-sm {
+      margin: 0;
+    }
+  }
+
+  &__Label,
+  &__Input {
+    display: block;
+  }
+
+  &__Label {
+    font-weight: 700;
+
+    &.required {
+      
+      &::after {
+        content: "*";
+        margin-left: 3px;
+        color: var( --orange );
+      }
+    }
+  }
+
+  &__Input,
+  &__Textarea {
+    margin-top: 5px;
+    padding: 10px;
+    width: 100%;
+    font-family: var( --main );
+    font-size: 14px;
+    line-height: 1.3em;
+    color: var( --gray );
+    border: 2px solid var( --white );
+    transition: border-color ease-in-out .3s;
+    outline: 0;
+
+    @include v.viewport-md {
+      padding: 10px 20px;
+    }
+
+    &:focus {
+      border-color: var( --blue );
+    }
+
+    &.error {
+      border-color: var( --red );
+    }
+  }
+
+  &__Input {
+    height: var( --height );
+  }
+
+  &__Textarea {
+    height: 200px;
+
+    @include v.viewport-md {
+      padding: 20px;
+    }
+  }
+
+  &__Submit {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    height: var( --height );
+    font-weight: 700;
+    color: var( --white );
+    border-radius: 5px;
+    border: 2px solid var( --orange );
+    background-color: var( --orange );
+    transition: background-color ease-in-out .3s,
+                border-color ease-in-out .3s;
+    cursor: pointer;
+    
+    &:hover {
+      border-color: var( --orange-l10 );
+      background-color: var( --orange-l10 );
+    }
+  }
+
+  &__Error {
+    margin-top: 3px;
+    font-size: 11px;
+    font-weight: 700;
+    color: var( --red );
+
+    @include v.viewport-md {
+      font-size: 12px;
+    }
+  }
+}

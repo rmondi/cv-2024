@@ -8,6 +8,7 @@ import About from "../components/About/About";
 import Skills from "../components/Skills/Skills";
 import Portfolio from "../components/Portfolio/Portfolio";
 import Career from "../components/Career/Career";
+import Contact from "../components/Contact/Contact";
 
 const Home = async () => {
 
@@ -36,6 +37,9 @@ const Home = async () => {
       </Section>
       <Section id="career">
         <Career data={ career } />
+      </Section>
+      <Section id="contact" marBottom={ false }>
+        <Contact />
       </Section>
     </>
   );
