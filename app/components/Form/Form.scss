@@ -149,7 +149,16 @@
         background-color: transparent;
         transition: background-color ease-in-out .3s;
       }
+
+      span::after {
+        content: "*";
+        margin-left: 3px;
+        font-weight: 700;
+        color: var( --orange );
+      }
     }
+
+    .Form__Error { margin-left: 30px; }
   }
 
   &__Submit {

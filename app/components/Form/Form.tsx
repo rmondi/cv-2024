@@ -146,7 +146,9 @@ export const FormRGPD = ( { error = null, onChange }: FormRGPDType ) => {
           onChange={ onChange }
         />
         <label htmlFor="rgpd">
-          { value }
+          <span>
+            { value }
+          </span>
         </label>
         { error !== null && <FormError message={ error } /> }
       </div>
