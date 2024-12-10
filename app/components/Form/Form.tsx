@@ -7,9 +7,12 @@ import {
   FormElementType,
   FormLabelType,
   FormInputType,
+  FormRGPDType,
   FormSubmitType,
   FormErrorType
 } from "@/app/utils/Types";
+
+import { useScopedI18n } from "@/locales/client";
 
 import "./Form.scss";
 
@@ -121,6 +124,32 @@ export const FormTextarea = ( {
       >
       </textarea>
       { error !== null && <FormError message={ error } /> }
+    </FormElement>
+  );
+};
+
+/** Form RGPD */
+export const FormRGPD = ( { error = null, onChange }: FormRGPDType ) => {
+
+  const t = useScopedI18n( "contact" );
+
+  const value = t( "rgpd" );
+
+  return (
+    <FormElement>
+      <div className="Form__RGPD">
+        <input
+          type="checkbox"
+          id="rgpd"
+          name="rgpd"
+          value={ value }
+          onChange={ onChange }
+        />
+        <label htmlFor="rgpd">
+          { value }
+        </label>
+        { error !== null && <FormError message={ error } /> }
+      </div>
     </FormElement>
   );
 };

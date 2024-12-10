@@ -10,6 +10,7 @@ import {
   FormCol,
   FormInput,
   FormTextarea,
+  FormRGPD,
   FormSubmit } from "../Form/Form";
 
 import { ContactFormType, ValidateErrorsType } from "@/app/utils/Types";
@@ -23,7 +24,8 @@ const Contact = () => {
   const initialValues: ContactFormType = {
     fullname: "",
     email: "",
-    message: ""
+    message: "",
+    rgpd: []
   };
 
   const validate = async ( values: ContactFormType ) => {
@@ -41,6 +43,10 @@ const Contact = () => {
 
     if ( !values.message ) {
       errors.message = t( "mandatory" );
+    }
+
+    if ( values.rgpd.length === 0 ) {
+      errors.rgpd = t( "mandatory" );
     }
 
     return errors;
@@ -106,6 +112,14 @@ const Contact = () => {
                     value={ formik.values.message }
                     error={ formik.errors.message ? formik.errors.message : null }
                     required={ true }
+                    onChange={ formik.handleChange }
+                  />
+                </FormCol>
+              </FormRow>
+              <FormRow>
+                <FormCol>
+                  <FormRGPD
+                    error={ formik.errors.rgpd ? formik.errors.rgpd : null }
                     onChange={ formik.handleChange }
                   />
                 </FormCol>
