@@ -89,6 +89,69 @@
     }
   }
 
+  &__RGPD {
+    position: relative;
+
+    input {
+      position: absolute;
+      left: -999999px;
+      visibility: hidden;
+
+      &:checked {
+
+        & + label {
+
+          &::before {
+            border-color: var( --orange );
+          }
+
+          &::after {
+            background-color: var( --orange );
+          }
+        }
+      }
+    }
+
+    label {
+      position: relative;
+      display: block;
+      padding-left: 30px;
+      transition: color ease-in-out .3s;
+      cursor: pointer;
+
+      &:hover {
+        color: var( --orange );
+      }
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+      }
+
+      &::before {
+        z-index: 1;
+        top: 4px;
+        left: 0;
+        width: 16px;
+        height: 16px;
+        border: 2px solid var( --white );
+        background-color: var( --white );
+        transition: border-color ease-in-out .3s;
+      }
+
+      &::after {
+        z-index: 2;
+        top: 9px;
+        left: 5px;
+        width: 10px;
+        height: 10px;
+        background-color: transparent;
+        transition: background-color ease-in-out .3s;
+      }
+    }
+  }
+
   &__Submit {
     display: flex;
     align-items: center;

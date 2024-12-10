@@ -102,12 +102,17 @@ export type FormInputType = {
   onChange: ( e : React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement> ) => void;
 };
 
+export type FormRGPDType = {
+  error?: string | string[] | null;
+  onChange: ( e : React.ChangeEvent<HTMLInputElement> ) => void;
+};
+
 export type FormSubmitType = {
   value: string;
 };
 
 export type FormErrorType = {
-  message: string | null;
+  message: string | string[] | null;
 };
 
 export type DynamicObjectType = {
@@ -118,6 +123,7 @@ export type ContactFormType = {
   fullname: string;
   email: string;
   message: string;
+  rgpd: string[];
 };
 
 export type ValidateErrorsType = {
