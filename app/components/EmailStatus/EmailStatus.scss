@@ -1,0 +1,38 @@
+@use "../../styles/Colors";
+@use "../../styles/mixins/Viewport" as v;
+
+.EmailStatus {
+  
+  &__Icon {
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      height: 60px;
+      width: 60px;
+
+      @at-root .EmailStatus.success & {
+        stroke: var( --orange );
+      }
+
+      @at-root .EmailStatus.error & {
+        stroke: var( --red );
+      }
+    }
+  }
+
+  &__Message {
+    text-align: center;
+    font-weight: 700;
+    
+    @at-root .EmailStatus.success & {
+      color: var( --orange );
+    }
+
+    @at-root .EmailStatus.error & {
+      color: var( --red );
+    }
+  }
+}

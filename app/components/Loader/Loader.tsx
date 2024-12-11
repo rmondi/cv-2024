@@ -1,9 +1,13 @@
 import "./Loader.scss";
 
-const Loader = () => {
+type LoaderType = {
+  fullscreen?: boolean;
+};
+
+const Loader = ( { fullscreen }: LoaderType ) => {
   
   return (
-    <div className="Loader">
+    <div className={ `Loader${ fullscreen ? " fullscreen" : "" }` }>
       <span className="Loader__Spin"></span>
     </div>
   );
