@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Container from "../components/Container/Container";
 import { I18nProviderClient } from "@/locales/client";
+import Recaptcha from "../components/Recaptcha/Recaptcha";
 
 import "../styles/Globals.scss";
 
@@ -23,7 +24,9 @@ export default async function RootLayout({
       <body>
         <I18nProviderClient locale={ locale }>
           <Container>
-            {children}
+            <Recaptcha>
+              {children}
+            </Recaptcha>
           </Container>
         </I18nProviderClient>
       </body>
