@@ -16,15 +16,20 @@
     --dim: 80px;
   }
 
-  position: fixed;
-  inset: 0;
-  z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  width: 100vw;
-  background-color: var( --gray-extralight );
+  height: var( --dim );
+  width: var( --dim );
+  
+  &.fullscreen {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    width: 100vw;
+    height: 100vh;
+    background-color: var( --gray-extralight );
+  }
 
   &__Spin {
     transform: rotateZ(45deg);

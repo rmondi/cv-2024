@@ -1,10 +1,13 @@
 "use client";
 
+import { useState } from "react";
 import { useScopedI18n } from "@/locales/client";
 import { useFormik } from "formik";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import Title from "../Title/Title";
 import Paragraph from "../Paragraph/Paragraph";
+import EmailStatus from "../EmailStatus/EmailStatus";
+import Loader from "../Loader/Loader";
 import {
   Form,
   FormRow,
@@ -19,6 +22,11 @@ import { ContactFormType, ValidateErrorsType } from "@/app/utils/Types";
 import "./Contact.scss";
 
 const Contact = () => {
+
+  const [ displayForm, setDisplayForm ] = useState( true );
+  const [ sending, setSending ] = useState( false );
+  const [ sent, setSent ] = useState( false );
+  const [ isSuccess, setIsSuccess ] = useState( false );
 
   const t = useScopedI18n( "contact" );
   const { executeRecaptcha } = useGoogleReCaptcha();
@@ -55,6 +63,10 @@ const Contact = () => {
   };
 
   const onSubmit = async ( values: ContactFormType ) => {
+    setDisplayForm( false );
+    setSending( true );
+
+    const { fullname, email, message, rgpd } = values;
 
     /** Test if Recaptcha is available */
     if ( !executeRecaptcha ) {
@@ -77,7 +89,26 @@ const Contact = () => {
     .then( response => response.json() )
     .catch( error => console.error( error ) );
 
-    console.log(success);
+    if ( success ) {
+      fetch( "/api/send", {
+        method: "POST",
+        headers,
+        body: JSON.stringify( { fullname, email, message, rgpd: rgpd[0] } )
+      } )
+      .then( response => response.json() )
+      .then( response => {
+        if ( response.id ) setIsSuccess( true );
+        else setIsSuccess( false );
+        
+        setSending( false );
+        setSent( true );
+      } )
+      .catch( error => {
+        setIsSuccess( false );
+        setSending( false );
+        console.error( error );
+      } )
+    }
   };
 
   const formik = useFormik( {
@@ -99,60 +130,65 @@ const Contact = () => {
             <Paragraph>{ t( "description" ) }</Paragraph>
           </div>
           <div className="Contact__Form">
-            <Form onSubmit={ formik.handleSubmit }>
-              <FormRow>
-                <FormCol>
-                  <FormInput
-                    type="text"
-                    label={ t( "name" ) }
-                    id="fullname"
-                    name="fullname"
-                    value={ formik.values.fullname }
-                    error={ formik.errors.fullname ? formik.errors.fullname : null }
-                    required={ true }
-                    onChange={ formik.handleChange }
-                  />
-                </FormCol>
-                <FormCol>
-                  <FormInput
-                    type="email"
-                    label={ t( "email" ) }
-                    id="email"
-                    name="email"
-                    value={ formik.values.email }
-                    error={ formik.errors.email ? formik.errors.email : null }
-                    required={ true }
-                    onChange={ formik.handleChange }
-                  />
-                </FormCol>
-              </FormRow>
-              <FormRow>
-                <FormCol>
-                  <FormTextarea
-                    id="message"
-                    name="message"
-                    label={ t( "message" ) }
-                    value={ formik.values.message }
-                    error={ formik.errors.message ? formik.errors.message : null }
-                    required={ true }
-                    onChange={ formik.handleChange }
-                  />
-                </FormCol>
-              </FormRow>
-              <FormRow>
-                <FormCol>
-                  <FormRGPD
-                    error={ formik.errors.rgpd ? formik.errors.rgpd : null }
-                    onChange={ formik.handleChange }
-                  />
-                </FormCol>
-              </FormRow>
-              <FormRow>
-                <FormCol>
-                  <FormSubmit value={ t( "submit" ) } />
-                </FormCol>
-              </FormRow>
-            </Form>
+            { sent && <EmailStatus success={ isSuccess } /> }
+            { sending && <div className="Contact__Loader"><Loader /></div> }
+            {
+              displayForm &&
+              <Form onSubmit={ formik.handleSubmit }>
+                <FormRow>
+                  <FormCol>
+                    <FormInput
+                      type="text"
+                      label={ t( "name" ) }
+                      id="fullname"
+                      name="fullname"
+                      value={ formik.values.fullname }
+                      error={ formik.errors.fullname ? formik.errors.fullname : null }
+                      required={ true }
+                      onChange={ formik.handleChange }
+                    />
+                  </FormCol>
+                  <FormCol>
+                    <FormInput
+                      type="email"
+                      label={ t( "email" ) }
+                      id="email"
+                      name="email"
+                      value={ formik.values.email }
+                      error={ formik.errors.email ? formik.errors.email : null }
+                      required={ true }
+                      onChange={ formik.handleChange }
+                    />
+                  </FormCol>
+                </FormRow>
+                <FormRow>
+                  <FormCol>
+                    <FormTextarea
+                      id="message"
+                      name="message"
+                      label={ t( "message" ) }
+                      value={ formik.values.message }
+                      error={ formik.errors.message ? formik.errors.message : null }
+                      required={ true }
+                      onChange={ formik.handleChange }
+                    />
+                  </FormCol>
+                </FormRow>
+                <FormRow>
+                  <FormCol>
+                    <FormRGPD
+                      error={ formik.errors.rgpd ? formik.errors.rgpd : null }
+                      onChange={ formik.handleChange }
+                    />
+                  </FormCol>
+                </FormRow>
+                <FormRow>
+                  <FormCol>
+                    <FormSubmit value={ t( "submit" ) } />
+                  </FormCol>
+                </FormRow>
+              </Form>
+            }
           </div>
         </div>
       </div>
