@@ -2,6 +2,7 @@
 
 import { useScopedI18n } from "@/locales/client";
 import { useFormik } from "formik";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import Title from "../Title/Title";
 import Paragraph from "../Paragraph/Paragraph";
 import {
@@ -20,6 +21,7 @@ import "./Contact.scss";
 const Contact = () => {
 
   const t = useScopedI18n( "contact" );
+  const { executeRecaptcha } = useGoogleReCaptcha();
 
   const initialValues: ContactFormType = {
     fullname: "",
@@ -53,8 +55,29 @@ const Contact = () => {
   };
 
   const onSubmit = async ( values: ContactFormType ) => {
-    /** To do... */
-    console.log( values );
+
+    /** Test if Recaptcha is available */
+    if ( !executeRecaptcha ) {
+      console.error( "Not able to execute Recaptcha." );
+      return;
+    }
+
+    /** Get Recaptcha Token */
+    const gRecaptchaToken = await executeRecaptcha( "inquirySubmit" );
+
+    const headers = new Headers();
+    headers.append( "Accept", "application/json, text/plain, */*" );
+    headers.append( "Content-Type", "application/json" );
+
+    const { success } = await fetch( "/api/recaptchaSubmit", {
+      method: "POST",
+      headers,
+      body: JSON.stringify( { gRecaptchaToken } )
+    } )
+    .then( response => response.json() )
+    .catch( error => console.error( error ) );
+
+    console.log(success);
   };
 
   const formik = useFormik( {
