@@ -11,10 +11,20 @@
   max-width: 100vw;
   
   &__Container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
     height: var( --nav-height );
-    transition: height ease-in-out .3s;
+    // transition: height ease-in-out .3s;
+
+    @include v.viewport-sm {
+      padding: 0 60px;
+    }
 
     @include v.viewport-md {
+      padding: 0;
       margin: 0 auto;
       width: var( --container-max-md-width );
     }
@@ -23,202 +33,32 @@
       width: var( --container-max-lg-width );
     }
 
-    @at-root body.isScrolled & {
-      height: 50px;
-    }
-  }
-  
-  &__Head {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 0 20px;
-    height: 100%;
-    background-color: var( --white );
-    transition: opacity ease-in-out .3s;
-
-    @at-root body.isScrolled & {
-      opacity: .9;
-    }
-
-    @include v.viewport-sm {
-      padding: 0 60px;
-    }
-
-    @include v.viewport-md {
-      display: none;
-    }
-  }
-
-  &__Toggle {
-    margin-right: -10px;
-
-    @include v.viewport-md {
-      display: none;
-    }
-  }
-
-  &__Body {
-    z-index: 1000;
-    position: fixed;
-    top: 60px;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    transform: translateX( 100% );
-    display: flex;
-    flex-direction: column;
-    background-color: var( --white );
-    transition: transform ease-in-out .6s;
-
-    @include v.viewport-md {
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-end;
-      position: relative;
-      top: auto;
-      right: auto;
-      bottom: 0;
-      left: 0;
-      height: 100%;
-      transform: none;
-      background-color: transparent;
-    }
-
-    @at-root body.isScrolled & {
-      top: 50px;
-
-      @include v.viewport-md {
-        top: auto;
-      }
-    }
-
-    &--active {
-      transform: translateX(0);
-    }
-
     &::before {
-
-      @include v.viewport-md {
-        content: "";
-        position: absolute;
-        z-index: -1;
-        top: 0;
-        bottom: 0;
-        left: 50%;
-        width: 100vw;
-        transform: translateX(-50%);
-        background-color: var( --white );
-        transition: opacity ease-in-out .3s;
-      }
-
-      @at-root body.isScrolled & {
-
-        @include v.viewport-md {
-          opacity: .9;
-        }
-      }
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 100vw;
+      transform: translateX( -50% );
+      background-color: var( --white );
     }
+
+    // @at-root body.isScrolled & {
+    //   height: 50px;
+    // }
   }
 
-  &__Menu {
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  &__Logo {
 
-    @include v.viewport-md {
-      justify-content: flex-end;
-    }
-  }
-
-  &__List {
-
-    @include v.viewport-md {
-      display: flex;
-    }
-  }
-
-  &__Item {
-
-    &:last-child {
-
-      .Nav__Link {
-
-        @include v.viewport-md {
-          padding-right: 0;
-        }
-      }
-    }
-  }
-
-  &__Link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
-
-    @include v.viewport-md {
-      padding: 0 15px;
-    }
-
-    &--selected,
-    &:hover {
-      
-      span {
-
-        @include v.viewport-md {
-          color: var( --orange );
-        }
-
-        &::after {
-
-          @include v.viewport-md {
-            right: 0;
-            left: 0;
-          }
-        }
-      }
-    }
-
-    span {
-      font-size: 24px;
-      line-height: 1em;
-      text-align: center;
-      color: var( --blue );
-      transition: color ease-in-out .3s;
-
-      @include v.viewport-md {
-        position: relative;
-        font-size: 16px;
-      }
-
-      &::after {
-
-        @include v.viewport-md {
-          content: "";
-          position: absolute;
-          right: 50%;
-          bottom: -4px;
-          left: 50%;
-          height: 1px;
-          background-color: var( --orange );
-          transition: right ease-in-out .3s,
-                      left ease-in-out .3s;
-        }
-      }
+    svg {
+      width: 92px;
+      height: 26px;
     }
   }
 
   &__Language-switcher {
-    flex: 0 0 10%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    @include v.viewport-md {
-      display: block;
-      margin-left: 60px;
-    }
+    
   }
 }

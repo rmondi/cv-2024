@@ -5,20 +5,13 @@ import { v4 as uuidv4 } from "uuid";
 
 import "./LanguageSwitcher.scss";
 
-type LanguageSwitcherType = {
-  toggleMenu: () => void;
-};
-
-const LanguageSwitcher = ( { toggleMenu }: LanguageSwitcherType ) => {
+const LanguageSwitcher = () => {
 
   const locales = [ "fr", "en" ];
   const currentLocale = useCurrentLocale();
   const changeLocale = useChangeLocale();
 
-  const handleClick = ( locale: string ) => {
-    changeLocale( locale as "fr" | "en" );
-    toggleMenu();
-  }
+  const handleClick = ( locale: string ) => changeLocale( locale as "fr" | "en" );
   
   return (
     <div className="LanguageSwitcher">
