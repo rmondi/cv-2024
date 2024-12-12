@@ -1,14 +1,9 @@
-import type { Metadata } from "next";
-import Container from "../components/Container/Container";
 import { I18nProviderClient } from "@/locales/client";
+
+import Container from "../components/Container/Container";
 import Recaptcha from "../components/Recaptcha/Recaptcha";
 
 import "../styles/Globals.scss";
-
-export const metadata: Metadata = {
-  title: "Rémy Mondi | Développeur front-end React, Next.js & Typescript",
-  description: "Rémy Mondi | Développeur front-end React, Next.js & Typescript",
-};
 
 export default async function RootLayout({
   children,
