@@ -1,0 +1,17 @@
+{
+  "title": "Rémy Mondi | Développeur front-end React, Next.js & Typescript",
+  "description": "Rémy Mondi | Développeur front-end React, Next.js & Typescript",
+  "openGraph": {
+    "title": "Rémy Mondi | Développeur front-end React, Next.js & Typescript",
+    "description": "Rémy Mondi | Développeur front-end React, Next.js & Typescript",
+    "url": "https://rmondi.dev",
+    "siteName": "Rémy Mondi | Développeur front-end React, Next.js & Typescript",
+    "images": [
+      {
+        "url": "https://rmondi.dev/rmondi_og.jpg",
+        "width": 1200,
+        "height": 630
+      }
+    ]
+  }
+}

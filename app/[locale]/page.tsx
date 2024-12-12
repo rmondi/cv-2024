@@ -10,6 +10,26 @@ import Portfolio from "../components/Portfolio/Portfolio";
 import Career from "../components/Career/Career";
 import Contact from "../components/Contact/Contact";
 
+export const generateMetadata = async () => {
+
+  const currentLocale = await getCurrentLocale();
+
+  const file = await fs.readFile( `${ process.cwd() }/app/data/${ currentLocale }/seo.json`, "utf8" );
+  const data = JSON.parse( file );
+
+  return {
+    title: data.title,
+    description: data.description,
+    openGraph: {
+      title: data.openGraph.title,
+      description: data.openGraph.description,
+      url: data.openGraph.url,
+      siteName: data.openGraph.siteName,
+      images: data.openGraph.images
+    }
+  };
+};
+
 const Home = async () => {
 
   const currentLocale = await getCurrentLocale();
