@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import queryString from "query-string";
 
-export const POST = async ( request: Request, response: Response ) => {
+export const POST = async ( request: Request ) => {
 
   const postData = await request.json();
 
@@ -27,6 +27,7 @@ export const POST = async ( request: Request, response: Response ) => {
     .then( response => response.json() )
     .catch( error => console.error( error ) );
   } catch( error ) {
+    console.error( error );
     return NextResponse.json( { success: false } );
   }
 
