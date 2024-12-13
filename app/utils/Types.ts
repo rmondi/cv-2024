@@ -136,3 +136,14 @@ export type ContactLinkType = {
   value: string;
   icon: string;
 };
+
+export type GSAPType = {
+  [ key: string ]: string | number;
+};
+
+export const GSAPOptions: GSAPType = {
+  y: 0,
+  ease: "elastic",
+  duration: 2,
+  opacity: 1,
+};
