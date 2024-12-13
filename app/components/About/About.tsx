@@ -2,8 +2,8 @@
 
 import { v4 as uuidv4 } from "uuid";
 import { useRef } from "react";
-import { useInView } from "react-intersection-observer";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { AboutType, GSAPOptions } from "@/app/utils/Types";
 import Image from "next/image";
@@ -13,37 +13,32 @@ import Paragraph from "../Paragraph/Paragraph";
 
 import "./About.scss";
 
+gsap.registerPlugin( useGSAP );
+gsap.registerPlugin( ScrollTrigger );
+
 const About = ( { name, job, introduction, image }: AboutType ) => {
 
   const gsapRef = useRef( null );
 
-  const { ref } = useInView( {
-    threshold: 0.2,
-  } );
-
   useGSAP( () => {
-    gsap.to( "#header-title", { ...GSAPOptions } );
-    gsap.to( "#header-subtitle", { ...GSAPOptions, delay: .4 } );
-    gsap.to( "#header-visual", { ...GSAPOptions, delay: .6 } );
-    gsap.to( "#header-text", { ...GSAPOptions, delay: .8 } );
+
+    ScrollTrigger.batch( ".gsap", {
+      onEnter: ( elements ) => {
+        gsap.to( elements, { ...GSAPOptions, stagger: 0.15 } );
+      }
+    } );
   }, { scope: gsapRef } );
   
   return (
-    <header
-      ref={ ref }
-      className="Header"
-    >
+    <header className="Header">
       <div className="Header__Wrapper" ref={ gsapRef }>
         <div className="Header__Title">
           <Title level={ 1 }>
-            <span id="header-title">{ name }</span>
-            <span id="header-subtitle">{ job }</span>
+            <span className="gsap">{ name }</span>
+            <span className="gsap">{ job }</span>
           </Title>
         </div>
-        <div
-          id="header-visual"
-          className="Header__Visual"
-        >
+        <div className="Header__Visual gsap">
           <Background />
           <div className="Header__Visual__Wrapper">
             <div className="Header__Visual__Slot Header__Visual__Slot--top">
@@ -61,10 +56,7 @@ const About = ( { name, job, introduction, image }: AboutType ) => {
             </div>
           </div>
         </div>
-        <div
-          id="header-text"
-          className="Header__Text"
-        >
+        <div className="Header__Text gsap">
           {
             introduction.map( element => <Paragraph key={ uuidv4() }>{ element }</Paragraph> )
           }
