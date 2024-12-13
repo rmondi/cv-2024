@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { getCurrentLocale, getScopedI18n } from "@/locales/server";
-import Section from "@/app/components/Section/Section";
 import Paragraph from "@/app/components/Paragraph/Paragraph";
 import NotFound from "@/app/components/NotFound/NotFound";
 
@@ -23,8 +22,8 @@ const notFound = async () => {
   const t = await getScopedI18n( "notFound" );
   
   return (
-    <Section id="not-found">
-      <div className="NotFound">
+    <div className="NotFound">
+      <div className="NotFound__Wrapper">
         <div className="NotFound__Image">
           <NotFound />
         </div>
@@ -47,7 +46,7 @@ const notFound = async () => {
           </div>
         </div>
       </div>
-    </Section>
+    </div>
   )
 }
 
