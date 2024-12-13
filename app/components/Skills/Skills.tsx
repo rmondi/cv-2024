@@ -5,7 +5,6 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import { useInView } from "react-intersection-observer";
 import { useScopedI18n } from "@/locales/client";
 
 import Title from "../Title/Title";
@@ -25,17 +24,13 @@ const Skills = ( { details, description }: SkillsType ) => {
 
   const t = useScopedI18n( "nav" );
 
-  const { ref, inView } = useInView( {
-    threshold: 0.8,
-  } );
-
   const gsapRef = useRef( null );
 
   useGSAP( () => {
 
     ScrollTrigger.batch( ".gsap", {
       interval: .5,
-      onEnter: ( elements, trigger ) => {
+      onEnter: ( elements ) => {
         gsap.to( elements, { ...GSAPOptions, stagger: 0.15 } );
       }
     } );
@@ -49,10 +44,7 @@ const Skills = ( { details, description }: SkillsType ) => {
   }, { scope: gsapRef } );
   
   return (
-    <div
-      ref={ ref }
-      className="Skills"
-    >
+    <div className="Skills">
       <div
         ref={ gsapRef }
         className="Skills__Container"

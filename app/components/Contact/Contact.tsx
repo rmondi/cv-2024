@@ -1,8 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useScopedI18n } from "@/locales/client";
 import { useFormik } from "formik";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import Title from "../Title/Title";
 import Paragraph from "../Paragraph/Paragraph";
@@ -17,11 +20,26 @@ import {
   FormRGPD,
   FormSubmit } from "../Form/Form";
 
-import { ContactFormType, ValidateErrorsType } from "@/app/utils/Types";
+import { ContactFormType, ValidateErrorsType, GSAPOptions } from "@/app/utils/Types";
 
 import "./Contact.scss";
 
+gsap.registerPlugin( useGSAP );
+gsap.registerPlugin( ScrollTrigger );
+
 const Contact = () => {
+
+  const gsapRef = useRef( null );
+
+  useGSAP( () => {
+
+    ScrollTrigger.batch( ".gsap", {
+      interval: .5,
+      onEnter: ( elements ) => {
+        gsap.to( elements, { ...GSAPOptions, stagger: 0.15 } );
+      }
+    } );
+  }, { scope: gsapRef } );
 
   const [ displayForm, setDisplayForm ] = useState( true );
   const [ sending, setSending ] = useState( false );
@@ -118,18 +136,21 @@ const Contact = () => {
   } );
   
   return (
-    <div className="Contact">
+    <div
+      ref={ gsapRef }
+      className="Contact"
+    >
       <div className="Contact__Wrapper">
-        <div className="Contact__Header">
+        <div className="Contact__Header gsap">
           <Title level={ 2 }>
             { t( "title" ) }
           </Title>
         </div>
         <div className="Contact__Body">
-          <div className="Contact__Description">
+          <div className="Contact__Description gsap">
             <Paragraph>{ t( "description" ) }</Paragraph>
           </div>
-          <div className="Contact__Form">
+          <div className="Contact__Form gsap">
             { sent && <EmailStatus success={ isSuccess } /> }
             { sending && <div className="Contact__Loader"><Loader /></div> }
             {
