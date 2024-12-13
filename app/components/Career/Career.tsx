@@ -1,28 +1,50 @@
 "use client";
 
+import { useRef } from "react";
 import { v4 as uuidv4 } from "uuid";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 import { useScopedI18n } from "@/locales/client";
 import Title from "../Title/Title";
 import Slider from "../Slider/Slider";
 import { SwiperSlide } from "swiper/react";
 import Experience from "../Experience/Experience";
 
-import { CareerType } from "@/app/utils/Types";
+import { CareerType, GSAPOptions } from "@/app/utils/Types";
 
 import "./Career.scss";
+
+gsap.registerPlugin( useGSAP );
+gsap.registerPlugin( ScrollTrigger );
 
 const Career = ( { data }: CareerType ) => {
 
   const t = useScopedI18n( "nav" );
+
+  const gsapRef = useRef( null );
+
+  useGSAP( () => {
+
+    ScrollTrigger.batch( ".gsap", {
+      interval: .5,
+      onEnter: ( elements ) => {
+        gsap.to( elements, { ...GSAPOptions, stagger: 0.15 } );
+      }
+    } );
+  }, { scope: gsapRef } );
   
   return (
-    <div className="Career">
-      <div className="Career__Header">
+    <div
+      ref={ gsapRef }
+      className="Career"
+    >
+      <div className="Career__Header gsap">
         <Title level={ 2 }>
           { t( "career" ) }
         </Title>
       </div>
-      <div className="Career__Body">
+      <div className="Career__Body gsap">
         <div className="Career__Slider">
           <Slider
             slidesPerView={ 1 }
