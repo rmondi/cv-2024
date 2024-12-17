@@ -1,0 +1,18 @@
+.Nav,
+.Footer {
+  display: none;
+}
+
+.MainLayout {
+  padding: 0;
+}
+
+.Main {
+  width: 100vw;
+  height: 100vh;
+
+  iframe {
+    height: 100%;
+    width: 100%;
+  }
+}

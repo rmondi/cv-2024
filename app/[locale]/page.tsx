@@ -14,7 +14,7 @@ export const generateMetadata = async () => {
 
   const currentLocale = await getCurrentLocale();
 
-  const file = await fs.readFile( `${ process.cwd() }/app/data/${ currentLocale }/seo.json`, "utf8" );
+  const file = await fs.readFile( `${ process.cwd() }/public/data/${ currentLocale }/seo.json`, "utf8" );
   const data = JSON.parse( file );
 
   return {
@@ -34,7 +34,7 @@ const Home = async () => {
 
   const currentLocale = await getCurrentLocale();
 
-  const file = await fs.readFile( `${ process.cwd() }/app/data/${ currentLocale }/data.json`, "utf8" );
+  const file = await fs.readFile( `${ process.cwd() }/public/data/${ currentLocale }/data.json`, "utf8" );
   const data = JSON.parse( file );
 
   const { about, skills, portfolio, career } = data;

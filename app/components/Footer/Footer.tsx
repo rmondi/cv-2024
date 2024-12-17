@@ -13,7 +13,7 @@ const Footer = async () => {
 
   const currentLocale = await getCurrentLocale();
 
-  const file = await fs.readFile( `${ process.cwd() }/app/data/${ currentLocale }/contact.json`, "utf8" );
+  const file = await fs.readFile( `${ process.cwd() }/public/data/${ currentLocale }/contact.json`, "utf8" );
   const data = JSON.parse( file );
   
   return (
