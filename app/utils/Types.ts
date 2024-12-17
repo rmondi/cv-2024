@@ -39,8 +39,19 @@ export type ReferenceType = {
   tags: string[];
 };
 
+export const ReferenceDefault: ReferenceType = {
+  image: "",
+  title: "",
+  url: "",
+  tags: []
+};
+
 export type PortfolioType = {
   data: ReferenceType[];
+};
+
+export const PortfolioDefault: PortfolioType = {
+  data: [ ReferenceDefault ]
 };
 
 export type ExperienceType = {
@@ -57,9 +68,23 @@ export type ExperienceType = {
   tags: string[];
 };
 
-export type CareerType = {
-  data: ExperienceType[];
+export const ExperienceDefault: ExperienceType = {
+  image: "",
+  url: "",
+  title: "",
+  start_date: "",
+  end_date: "",
+  city: "",
+  country: "",
+  type: "",
+  description: "",
+  tasks: [ "" ],
+  tags: [ "" ]
 };
+
+export type CareerType = ExperienceType[];
+
+export const CareerDefault: CareerType = [ ExperienceDefault ];
 
 export type TagType = {
   label: string;
