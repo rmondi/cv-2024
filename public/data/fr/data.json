@@ -13,31 +13,38 @@
     "details": [
       {
         "title": "React.js",
-        "icon": "/images/logos/react-js.svg"
+        "icon": "/images/logos/react-js.svg",
+        "level": "80%"
       },
       {
         "title": "Typescript",
-        "icon": "/images/logos/typescript.svg"
+        "icon": "/images/logos/typescript.svg",
+        "level": "90%"
       },
       {
         "title": "JS ES6+",
-        "icon": "/images/logos/javascript.svg"
+        "icon": "/images/logos/javascript.svg",
+        "level": "90%"
       },
       {
         "title": "Next.js",
-        "icon": "/images/logos/next-js.svg"
+        "icon": "/images/logos/next-js.svg",
+        "level": "80%"
       },
       {
         "title": "Figma",
-        "icon": "/images/logos/figma.svg"
+        "icon": "/images/logos/figma.svg",
+        "level": "50%"
       },
       {
         "title": "Vite.js",
-        "icon": "/images/logos/vite-js.svg"
+        "icon": "/images/logos/vite-js.svg",
+        "level": "80%"
       },
       {
         "title": "Sass",
-        "icon": "/images/logos/sass.svg"
+        "icon": "/images/logos/sass.svg",
+        "level": "90%"
       }
     ],
     "description": [

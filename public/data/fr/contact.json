@@ -2,18 +2,28 @@
   "name": "Rémy Mondi",
   "links": [
     {
+      "type": "phone",
       "label": "Téléphone",
       "href": "tel:+33767343674",
       "value": "+33 7 67 34 36 74",
       "icon": "/images/icons/phone.svg"
     },
     {
+      "type": "mail",
       "label": "E-mail",
       "href": "mailto:remy@mondi.dev",
       "value": "remy@mondi.dev",
       "icon": "/images/icons/mail.svg"
     },
     {
+      "type": "portfolio",
+      "label": "Portfolio",
+      "href": "https://rmondi.dev",
+      "value": "https://rmondi.dev",
+      "icon": "/images/icons/link.svg"
+    },
+    {
+      "type": "github",
       "label": "Github",
       "href": "https://github.com/rmondi",
       "value": "https://github.com/rmondi",

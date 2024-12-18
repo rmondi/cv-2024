@@ -10,18 +10,20 @@ import {
   AboutDefault,
   SkillsDefault,
   PortfolioDefault,
-  CareerDefault } from "@/app/utils/Types";
+  ExperiencesDefault,
+  ContactDefault } from "@/app/utils/Types";
 
 import "./page.scss";
 
 const CV = () => {
 
   const [ isLoading, setIsloading ] = useState( true );
+  const [ contact, setContact ] = useState( ContactDefault );
   const [ data, setData ] = useState( {
     about: AboutDefault,
     skills: SkillsDefault,
     portfolio: PortfolioDefault,
-    career: CareerDefault
+    career: ExperiencesDefault
   } );
 
   const currentLocale = useCurrentLocale();
@@ -32,6 +34,7 @@ const CV = () => {
     headers.append( "Content-Type", "application/json" );
     headers.append( "Accept", "application/json" );
 
+    /** Fetch data */
     await fetch( `/data/${ currentLocale }/data.json`, {
       method: "GET",
       headers
@@ -39,7 +42,18 @@ const CV = () => {
     .then( response => response.json() )
     .then( data => {
       setData( data );
-      setIsloading( false );
+
+      /** Fetch contact */
+      fetch( `/data/${ currentLocale }/contact.json`, {
+        method: "GET",
+        headers
+      } )
+      .then( response => response.json() )
+      .then( data => {
+        setContact( data );
+        setIsloading( false );
+      } )
+      .catch( error => console.error( error ) );
     } )
     .catch( error => console.error( error ) );
   };
@@ -53,7 +67,7 @@ const CV = () => {
         <meta rel="description" content="Rémy Mondi | Curriculum Vitae" />
       </Head>
       <PDFViewer>
-        <Pdf locale={ currentLocale } data={ data } />
+        <Pdf locale={ currentLocale } data={ data } contact={ contact } />
       </PDFViewer>
     </>
   )
