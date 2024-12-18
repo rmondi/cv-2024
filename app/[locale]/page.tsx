@@ -1,6 +1,7 @@
 "use server";
 
 import { promises as fs } from "fs";
+import path from "path";
 import { getCurrentLocale } from "@/locales/server";
 
 import Section from "../components/Section/Section";
@@ -14,7 +15,7 @@ export const generateMetadata = async () => {
 
   const currentLocale = await getCurrentLocale();
 
-  const file = await fs.readFile( `${ process.cwd() }/public/data/${ currentLocale }/seo.json`, "utf8" );
+  const file = await fs.readFile( path.join( process.cwd(), "public", "data", currentLocale, "seo.json" ), "utf8" );
   const data = JSON.parse( file );
 
   return {
@@ -34,7 +35,7 @@ const Home = async () => {
 
   const currentLocale = await getCurrentLocale();
 
-  const file = await fs.readFile( `${ process.cwd() }/public/data/${ currentLocale }/data.json`, "utf8" );
+  const file = await fs.readFile( path.join( process.cwd(), "public", "data", currentLocale, "data.json" ), "utf8" );
   const data = JSON.parse( file );
 
   const { about, skills, portfolio, career } = data;
