@@ -17,7 +17,6 @@
     align-items: center;
     padding: 0 20px;
     height: var( --nav-height );
-    // transition: height ease-in-out .3s;
 
     @include v.viewport-sm {
       padding: 0 60px;
@@ -44,10 +43,6 @@
       transform: translateX( -50% );
       background-color: var( --white );
     }
-
-    // @at-root body.isScrolled & {
-    //   height: 50px;
-    // }
   }
 
   &__Logo {
@@ -58,7 +53,13 @@
     }
   }
 
-  &__Language-switcher {
-    
+  &__Actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    @include v.viewport-md {
+      gap: 40px;
+    }
   }
 }
