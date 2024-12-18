@@ -1,6 +1,7 @@
 "use server";
 
 import { promises as fs } from "fs";
+import path from "path";
 import { getCurrentLocale } from "@/locales/server";
 import { v4 as uuidv4 } from "uuid";
 import Image from "next/image";
@@ -13,7 +14,7 @@ const Footer = async () => {
 
   const currentLocale = await getCurrentLocale();
 
-  const file = await fs.readFile( `${ process.cwd() }/public/data/${ currentLocale }/contact.json`, "utf8" );
+  const file = await fs.readFile( path.join( process.cwd(), "public", "data", currentLocale, "contact.json" ), "utf8" );
   const data = JSON.parse( file );
   
   return (
