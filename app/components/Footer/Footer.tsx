@@ -1,23 +1,41 @@
-"use server";
+"use client";
 
-import { promises as fs } from "fs";
-import path from "path";
-import { getCurrentLocale } from "@/locales/server";
+import { useState, useEffect } from "react";
+import { useCurrentLocale } from "@/locales/client";
 import { v4 as uuidv4 } from "uuid";
 import Image from "next/image";
 
-import { ContactLinkType } from "@/app/utils/Types";
+import { ContactType, ContactDefault } from "@/app/utils/Types";
 
 import "./Footer.scss";
 
-const Footer = async () => {
+const Footer = () => {
 
-  const currentLocale = await getCurrentLocale();
-
-  const file = await fs.readFile( path.join( process.cwd(), "public", "data", currentLocale, "contact.json" ), "utf8" );
-  const data = JSON.parse( file );
+  const currentLocale = useCurrentLocale();
   
-  return (
+  const [ isLoading, setIsLoading ] = useState( true );
+  const [ data, setData ] = useState<ContactType>( ContactDefault );
+
+  const getData = async () => {
+    const headers = new Headers();
+    headers.append( "Content-Type", "application/json" );
+    headers.append( "Accept", "application/json" );
+
+    await fetch( `/data/${ currentLocale }/contact.json`, {
+      method: "GET",
+      headers
+    } )
+    .then( response => response.json() )
+    .then( data => {
+      setData( data );
+      setIsLoading( false );
+    } )
+    .catch( error => console.error( error ) );
+  };
+
+  useEffect( () => { getData(); }, [ currentLocale ] );
+  
+  if ( !isLoading ) return (
     <footer className="Footer">
       <div className="Footer__Wrapper">
         <div className="Footer__Content">
@@ -26,7 +44,7 @@ const Footer = async () => {
           </div>
           <div className="Footer__Links">
             {
-              data.links.map( ( link: ContactLinkType ) => (
+              data.links.map( ( link ) => (
                 <a
                   key={ uuidv4() }
                   className="Footer__Link"
