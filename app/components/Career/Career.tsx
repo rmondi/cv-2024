@@ -11,12 +11,16 @@ import Slider from "../Slider/Slider";
 import { SwiperSlide } from "swiper/react";
 import Experience from "../Experience/Experience";
 
-import { CareerType, GSAPOptions } from "@/app/utils/Types";
+import { ExperiencesType, GSAPOptions } from "@/app/utils/Types";
 
 import "./Career.scss";
 
 gsap.registerPlugin( useGSAP );
 gsap.registerPlugin( ScrollTrigger );
+
+type CareerType = {
+  data: ExperiencesType
+};
 
 const Career = ( { data }: CareerType ) => {
 

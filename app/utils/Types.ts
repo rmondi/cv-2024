@@ -15,11 +15,13 @@ export const AboutDefault: AboutType = {
 export type SkillType = {
   title: string;
   icon: string;
+  level?: string;
 };
 
 export const SkillDefault: SkillType = {
   title: "",
-  icon: ""
+  icon: "",
+  level: ""
 };
 
 export type SkillsType = {
@@ -82,9 +84,9 @@ export const ExperienceDefault: ExperienceType = {
   tags: [ "" ]
 };
 
-export type CareerType = ExperienceType[];
+export type ExperiencesType = ExperienceType[];
 
-export const CareerDefault: CareerType = [ ExperienceDefault ];
+export const ExperiencesDefault: ExperiencesType = [ ExperienceDefault ];
 
 export type TagType = {
   label: string;
@@ -156,10 +158,29 @@ export type ValidateErrorsType = {
 };
 
 export type ContactLinkType = {
+  type: string;
   label: string;
   href: string;
   value: string;
   icon: string;
+};
+
+export const ContactLinkDefault: ContactLinkType = {
+  type: "",
+  label: "",
+  href: "",
+  value: "",
+  icon: ""
+};
+
+export type ContactType = {
+  name: string;
+  links: ContactLinkType[];
+};
+
+export const ContactDefault: ContactType = {
+  name: "",
+  links: [ ContactLinkDefault ]
 };
 
 export type GSAPType = {

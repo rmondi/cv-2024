@@ -15,7 +15,8 @@ import {
   AboutType,
   SkillsType,
   PortfolioType,
-  CareerType } from '@/app/utils/Types';
+  ExperiencesType,
+  ContactType } from '@/app/utils/Types';
 
 type PdfType = {
   locale: string;
@@ -23,8 +24,9 @@ type PdfType = {
     about: AboutType,
     skills: SkillsType,
     portfolio: PortfolioType,
-    career: CareerType
-  }
+    career: ExperiencesType
+  },
+  contact: ContactType
 };
 
 Font.register( { family: "PlayfairDisplay", src: "/fonts/PlayfairDisplay-Regular.ttf" } );
@@ -57,7 +59,7 @@ const styles = StyleSheet.create( {
   sidebarBody: {
     position: "relative",
     flexGrow: 1,
-    padding: "0 20px",
+    padding: "0 20px 20px 20px",
     backgroundColor: "#4F6D7A"
   },
   portrait: {
@@ -99,6 +101,49 @@ const styles = StyleSheet.create( {
   skills: {
     marginTop: "20px"
   },
+  skillsList: {
+    marginTop: "10px"
+  },
+  skill: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginBottom: "7px"
+  },
+  skillTitle: {
+    marginRight: "5px"
+  },
+  skillBorder: {
+    position: "relative",
+    width: "100px",
+    height: "10px",
+    border: "1px solid #FFF",
+    borderRadius: "5px"
+  },
+  skillLevel: {
+    position: "absolute",
+    top: "-1px",
+    bottom: "-1px",
+    left: "-1px",
+    backgroundColor: "#FFF",
+    borderRadius: "5px"
+  },
+  contacts: {
+    flexGrow: 1,
+    flexDirection: "column",
+    justifyContent: "flex-end"
+  },
+  contact: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: "6px"
+  },
+  contactIcon: {
+    marginRight: "5px",
+    width: "10px",
+    height: "10px"
+  },
+  contactText: {},
   main: {
     display: "flex",
     flexDirection: "column",
@@ -175,18 +220,18 @@ const styles = StyleSheet.create( {
     fontSize: "6px",
     fontWeight: "bold",
     lineHeight: "6px",
-    color: "#FFF",
+    color: "#4F6D7A",
     borderRadius: "3px",
-    backgroundColor: "#DD6E42"
+    backgroundColor: "#C0D6DF"
   },
   footer: {
     flex: "0 0 5%",
   }
 } );
 
-const Pdf = ( { locale, data }: PdfType ) => {
+const Pdf = ( { locale, data, contact }: PdfType ) => {
 
-  const { about, skills, portfolio, career } = data;
+  const { about, skills, career } = data;
 
   const i18n: { [ key: string ]: { [ key: string ]: string } } = {
     about: {
@@ -233,20 +278,34 @@ const Pdf = ( { locale, data }: PdfType ) => {
               <View style={ styles.subTitle }>
                 <Text>{ i18n.skills[locale] }</Text>
               </View>
-              <View>
+              <View style={ styles.skillsList }>
                 {
                   skills.details.map( skill => (
-                    <View key={ uuidv4() }>
-                      <View>
-                        <img src={ skill.icon } />
-                      </View>
-                      <View>
+                    <View key={ uuidv4() } style={ styles.skill }>
+                      <View style={ styles.skillTitle }>
                         <Text>{ skill.title }</Text>
+                      </View>
+                      <View style={ styles.skillBorder }>
+                        <View style={ [ styles.skillLevel, { width: `${ skill.level }` } ] }></View>
                       </View>
                     </View>
                   ) )
                 }
               </View>
+            </View>
+            <View style={ styles.contacts }>
+              {
+                contact.links.map( link => (
+                  <View key={ uuidv4() } style={ styles.contact }>
+                    <View style={ styles.contactIcon }>
+                      <Image src={ `/images/icons/${ link.type }.png` } />
+                    </View>
+                    <View style={ styles.contactText }>
+                      <Text>{ link.value }</Text>
+                    </View>
+                  </View>
+                ) )
+              }
             </View>
           </View>
         </View>
