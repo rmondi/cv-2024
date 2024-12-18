@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react"
 import { I18nProviderClient } from "@/locales/client";
 
 import Container from "../components/Container/Container";
@@ -21,6 +22,7 @@ export default async function RootLayout({
           <Container>
             <Recaptcha>
               {children}
+              <Analytics />
             </Recaptcha>
           </Container>
         </I18nProviderClient>
