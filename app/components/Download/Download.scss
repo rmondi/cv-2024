@@ -1,0 +1,32 @@
+@use "../../styles/Colors";
+@use "../../styles/mixins/Viewport" as v;
+
+.Download {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  height: 30px;
+  font-weight: 700;
+  color: var( --orange );
+  border-radius: 5px;
+  border: 1px solid var( --orange );
+  transition: background-color ease-in-out .3s,
+              color ease-in-out .3s;
+
+  svg {
+    margin-right: 5px;
+    stroke: var( --orange );
+    width: 18px;
+    height: 18px;
+    transition: stroke ease-in-out .3s;
+  }
+
+  &:hover {
+    color: var( --white );
+    background-color: var( --orange );
+
+    svg {
+      stroke: var( --white )
+    }
+  }
+}
