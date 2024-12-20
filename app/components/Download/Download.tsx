@@ -10,6 +10,7 @@ const Download = () => {
   return (
     <Link
       href="/cv"
+      target="_blank"
       className="Download"
     >
       <DownloadIcon strokeWidth={ 1.5 } />{ "CV" }

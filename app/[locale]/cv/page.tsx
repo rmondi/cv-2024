@@ -1,10 +1,16 @@
 "use client";
 
-import Head from "next/head";
+import dynamic from "next/dynamic";
+import Loader from "@/app/components/Loader/Loader";
 import { useState, useEffect } from "react";
 import { useCurrentLocale } from "@/locales/client";
 import Pdf from "@/app/components/Pdf/Pdf";
-import { PDFViewer } from "@react-pdf/renderer";
+
+const PDFViewer = dynamic( () => import( "@react-pdf/renderer" )
+  .then( mod => mod.PDFViewer ), {
+  loading: () => <Loader fullscreen={ true } />,
+  ssr: false
+} );
 
 import {
   AboutDefault,
@@ -17,6 +23,7 @@ import "./page.scss";
 
 const CV = () => {
 
+  const [ isClientSide, setIsClientSide ] = useState( false );
   const [ isLoading, setIsloading ] = useState( true );
   const [ contact, setContact ] = useState( ContactDefault );
   const [ data, setData ] = useState( {
@@ -59,17 +66,18 @@ const CV = () => {
   };
 
   useEffect( () => { getData(); }, [ currentLocale ] );
+
+  useEffect( () => {
+    if ( window && typeof window !== "undefined" ) {
+      console.log(window);
+      setIsClientSide( true );
+    }
+  }, [] );
   
-  if ( !isLoading ) return (
-    <>
-      <Head>
-        <title>{ "Rémy Mondi | Curriculum Vitae" }</title>
-        <meta rel="description" content="Rémy Mondi | Curriculum Vitae" />
-      </Head>
-      <PDFViewer>
-        <Pdf locale={ currentLocale } data={ data } contact={ contact } />
-      </PDFViewer>
-    </>
+  if ( !isLoading && isClientSide ) return (
+    <PDFViewer width="100%" height="100%">
+      <Pdf locale={ currentLocale } data={ data } contact={ contact } />
+    </PDFViewer>
   )
 }
 
