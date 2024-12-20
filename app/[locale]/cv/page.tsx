@@ -6,8 +6,7 @@ import { useState, useEffect } from "react";
 import { useCurrentLocale } from "@/locales/client";
 import Pdf from "@/app/components/Pdf/Pdf";
 
-const PDFViewer = dynamic( () => import( "@react-pdf/renderer" )
-  .then( mod => mod.PDFViewer ), {
+const PDFViewer = dynamic( () => import( "@/app/components/PDFViewer/PDFViewer" ), {
   loading: () => <Loader fullscreen={ true } />,
   ssr: false
 } );
