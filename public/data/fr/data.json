@@ -42,8 +42,8 @@
         "level": "80%"
       },
       {
-        "title": "Sass",
-        "icon": "/images/logos/sass.svg",
+        "title": "Tailwind CSS",
+        "icon": "/images/logos/tailwind-css.svg",
         "level": "90%"
       }
     ],
@@ -64,13 +64,25 @@
       "image": "/images/portfolio/coverstyl-desktop_720x450.jpg",
       "title": "CoverStyl",
       "url": "https://coverstyl.com/fr/",
-      "tags": [ "React.js", "Next.js", "JavaScript", "Typescript", "Strapi", "Tailwind CSS" ]
+      "tags": [ "React.js", "Next.js", "JavaScript", "Typescript", "Strapi" ]
     },
     {
       "image": "/images/portfolio/memento-desktop_720x450.jpg",
       "title": "Memento",
       "url": "https://www.tageblatt.lu/memento/",
       "tags": [ "React.js", "JavaScript", "Wordpress", "Sass" ]
+    },
+    {
+      "image": "/images/portfolio/melimix-desktop_720x450.png",
+      "title": "MéliMix",
+      "url": "https://melimix.vercel.app/",
+      "tags": [ "React.js", "Next.js", "JavaScript", "Typescript", "Tailwind CSS" ]
+    },
+    {
+      "image": "/images/portfolio/cistercian-code-desktop_720x450.png",
+      "title": "Cistercian Code",
+      "url": "https://cistercian-code.vercel.app/",
+      "tags": [ "React.js", "Next.js", "JavaScript", "Typescript", "Tailwind CSS" ]
     }
   ],
   "career": [
