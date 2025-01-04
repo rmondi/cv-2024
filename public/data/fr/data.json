@@ -83,6 +83,36 @@
       "title": "Cistercian Code",
       "url": "https://cistercian-code.vercel.app/",
       "tags": [ "React.js", "Next.js", "JavaScript", "Typescript", "Tailwind CSS" ]
+    },
+    {
+      "image": "/images/portfolio/carre-habitat-desktop_720x450.jpg",
+      "title": "Carré de l'habitat",
+      "url": "https://www.carre-habitat.com/",
+      "tags": [ "JavaScript", "SASS", "Flexbox", "Drupal 8", "PHP", "Twig" ]
+    },
+    {
+      "image": "/images/portfolio/mutuelle-internet-desktop_720x450.jpg",
+      "title": "Mutuelle Internet",
+      "url": "https://www.mutuelle-internet.com/",
+      "tags": [ "JavaScript", "SASS", "Flexbox", "Drupal 8", "PHP", "Twig" ]
+    },
+    {
+      "image": "/images/portfolio/mon-mal-de-dos-desktop_720x450.jpg",
+      "title": "Thuasne - Mon mal de dos",
+      "url": "https://www.monmaldedos.fr/",
+      "tags": [ "JavaScript", "SASS", "Flexbox", "Drupal 8", "PHP", "Twig" ]
+    },
+    {
+      "image": "/images/portfolio/digital-building-desktop_720x450.jpg",
+      "title": "Digital Building",
+      "url": "https://www.digitalbuilding.lu/fr/",
+      "tags": [ "JavaScript", "SASS", "Flexbox", "Wordpress", "PHP" ]
+    },
+    {
+      "image": "/images/portfolio/ic-groupe-desktop_720x450.jpg",
+      "title": "IC Groupe Immobilier",
+      "url": "https://icgroupe.lu/",
+      "tags": [ "JavaScript", "SASS", "Flexbox", "Wordpress", "PHP" ]
     }
   ],
   "career": [
