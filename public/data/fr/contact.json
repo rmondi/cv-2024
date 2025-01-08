@@ -23,6 +23,13 @@
       "icon": "/images/icons/link.svg"
     },
     {
+      "type": "linkedin",
+      "label": "Linkedin",
+      "href": "https://www.linkedin.com/in/rmondi",
+      "value": "https://www.linkedin.com/in/rmondi/",
+      "icon": "/images/icons/linkedin.svg"
+    },
+    {
       "type": "github",
       "label": "Github",
       "href": "https://github.com/rmondi",
